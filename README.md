@@ -66,7 +66,7 @@
   </li>
   <li><b>キーコード</b>
   <p>先ずは、ニックネーム、パスワードを輸入するための「InputField」（UGUI Component）と登録、ログインのボタンを作ります。<br/>
-  「ButtonContrller」と言うC#スクリプトを生成して、あるGameobjectにつきます。
+  「ButtonContrller」と言うC#スクリプトと「Controller」と言うGameobjectを生成して、スクリプトをGameobjectにつきます。
   </p>
   「ButtonController」の中は、ボタンのクリックエベントを処理するためのコードです。<br/>
   登録ボタンを処理するコードは以下：
@@ -92,11 +92,19 @@
 		});
 	}
   </pre>
-  
+  ユニティーに戻って、「登録」ボタンをクリックする。ボタンのOnClickファンクションを以下のように設置します。
   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/onclick.jpg"></p>
+   Gameobjectの「Controller」をクリックして、ニックネームとパスワードの入力ボックスを「nameInput」と「passwordInput」にドラッグします。
+   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/controllersetting.jpg"/></p>
+   以上は、登録効能の基本でした。
   </li>
-  <li><b>ヒント</b></li>
-  <li><b>ディスカッション</b></li>
+  <li><b>ヒント</b>
+  <br/>- ニックネームとパスワード両方の輸入が必要ため、チェックファンクションが必要。
+  <br/>- SignUpAsync()ファンクションは、シンクロファンクションではありません。
+  </li>
+  <li><b>ディスカッション</b>
+  <br/>ログインとログアウトの機能を挑戦しませんか？
+  </li>
 </ul>
 <h2>『問題二』　落書きを描く機能</h2>
 <ul>
