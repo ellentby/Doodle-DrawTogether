@@ -95,7 +95,7 @@
   ユニティーに戻って、「登録」ボタンをクリックする。ボタンのOnClickファンクションを以下のように設置します。
   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/onclick.jpg"></p>
    Gameobjectの「Controller」をクリックして、ニックネームとパスワードの入力ボックスを「nameInput」と「passwordInput」にドラッグします。
-   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/controllersetting.jpg"/></p>
+  <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/controllersetting.jpg"></p>
    以上は、登録効能の基本でした。
   </li>
   <li><b>ヒント</b>
