@@ -161,7 +161,6 @@ public class ButtonController : MonoBehaviour {
         if (IfNamePasswordIsFilledIn ()) {
 			//NCMBUserのインスタンス作成 
 			NCMBUser user = new NCMBUser();
-
 			//ユーザ名とパスワードの設定
 			user.UserName = nameInput.text;
 			user.Password = passwordInput.text;

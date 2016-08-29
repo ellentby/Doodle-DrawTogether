@@ -3,6 +3,7 @@ using System.Collections;
 using System.IO;
 using System;
 using NCMB;
+using UnityEngine.UI;
 
 public class SaveImage : MonoBehaviour {
 	public Camera camera;
@@ -26,18 +27,17 @@ public class SaveImage : MonoBehaviour {
 
 		RenderTexture.active = null; //can help avoid errors 
 		camera.targetTexture = null;
-		// consider ... Destroy(tempRT);
 
 		byte[] bytes;
 		bytes = virtualPhoto.EncodeToPNG();
 		saveToCloud (bytes,getName());
-		//File.WriteAllBytes(Application.dataPath + "/img/SavedScreen.png", bytes);
 	}
 	void saveToCloud(byte[] bytes, string name){
 		NCMBFile file = new NCMBFile (name, bytes);
 		file.SaveAsync ((NCMBException error) => {
 			if (error != null) {
 				Debug.Log("upload error");
+                showError(error);
 				// 失敗
 			} else {
 				saveImageData(name);
@@ -73,6 +73,7 @@ public class SaveImage : MonoBehaviour {
 		obj.Save ((NCMBException e) => {      
 			if (e != null) {
 				Debug.Log("save data error");
+                showError(e);
 			} else {
 				//成功時の処理
 				//TODO
@@ -84,4 +85,10 @@ public class SaveImage : MonoBehaviour {
 			}                   
 		});
 	}
+    void showError(NCMBException e)
+    {
+        GameObject.Find("wait").GetComponent<Text>().text = "";
+        GameObject.Find("wait").GetComponent<Text>().text =
+            e.ToString()+"\n"+"すみません。もう一度提出して下さい。";
+    }
 }
