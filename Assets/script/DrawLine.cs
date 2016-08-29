@@ -35,6 +35,8 @@ public class DrawLine : MonoBehaviour {
 			//to check if this line renderer is used. If it is, create a new line renderer(on a new Gameobject)
 			//(so that more than 1 lines can be rendered)
 			if(!used){
+                setLineColor();
+                setLineWidth();
 				used = true;
 				isMousePressed = true;
 				defaultRenderer.SetVertexCount (0);

@@ -11,10 +11,17 @@ public class ButtonController : MonoBehaviour {
 	public GameObject waitText;
 	public int lineIndex;
 	public GameObject rendererPrefab;
+    public Slider penSizeSlider;
+    public Sprite fishOpen;
+    public Sprite fishClose;
 
 	// Use this for initialization
 	void Start () {
-		lineColor = Color.green;
+		lineColor = Color.white;
+        if (penSizeSlider)
+        {
+            penSizeSlider.value = 0.2f;
+        }
 	}
 	
 	// Update is called once per frame
@@ -37,13 +44,13 @@ public class ButtonController : MonoBehaviour {
 		case "skyblue":
 			temp = Color.grey;
 			temp.r = 0;
-			temp.g = 0.2f;
-			temp.b = 0.5f;
+			temp.g = 1f;
+			temp.b = 1f;
 			lineColor = temp;
 			break;
 		case "yellow":
 			temp = Color.grey;
-			temp.r = 0.5f;
+			temp.r = 1f;
 			temp.g = 1f;
 			temp.b = 0f;
 			lineColor = temp;
@@ -57,25 +64,20 @@ public class ButtonController : MonoBehaviour {
 			break;
 		case "purple":
 			temp = Color.grey;
-			temp.r = 0.1f;
-			temp.g = 0f;
+			temp.r = 0.5f;
+			temp.g = 0.5f;
 			temp.b = 1f;
 			lineColor = temp;
 			break;
 		case "orange":
 			temp = Color.grey;
-			temp.r = 1f;
-			temp.g = 0.2f;
+			temp.r = 0.9f;
+			temp.g = 0.6f;
 			temp.b = 0f;
 			lineColor = temp;
 			break;
-		case "greygreen":
-			temp = Color.green;
-			temp.r = 0f;
-			temp.g = 0.5f;
-			temp.b = 0.3f;
-			temp.a = 0.3f;
-			lineColor = temp;
+		case "white":
+			lineColor = Color.white;
 			break;
 		}
 	}
@@ -91,7 +93,15 @@ public class ButtonController : MonoBehaviour {
 
 	void ChangePenWidthBySlider(float value){
 		penWidtn = 0.05f + value * 0.2f;
-	}
+        if (penSizeSlider.value * 100 % 10 >= 0 && penSizeSlider.value * 100 % 10 <= 5)
+        {
+            GameObject.Find("FishHandle").GetComponent<Image>().sprite = fishOpen;
+        }
+        else
+        {
+            GameObject.Find("FishHandle").GetComponent<Image>().sprite = fishClose;
+        }
+    }
 
 	public void OnNewTheme(){
 		Configuration.status = Status.newTheme;
@@ -111,7 +121,17 @@ public class ButtonController : MonoBehaviour {
 	}
 
 	public void OnQuitGame(){
-		Application.Quit ();
+        NCMBUser.LogOutAsync((NCMBException e) => {
+            if (e != null)
+            {
+                Application.Quit();
+            }
+            else
+            {
+
+                Application.Quit();
+            }
+        });
 	}
 
 	public void OnTurnThemePage(int i){
@@ -119,7 +139,8 @@ public class ButtonController : MonoBehaviour {
 	}
 
 	public void OnLogin(){
-		if (IfNamePasswordIsFilledIn ()) {
+        GameObject.Find("Notation").GetComponent<Text>().text = "";
+        if (IfNamePasswordIsFilledIn ()) {
 			// ユーザー名とパスワードでログイン
 			NCMBUser.LogInAsync (nameInput.text, passwordInput.text, (NCMBException e) => {    
 				if (e != null) {
@@ -136,7 +157,8 @@ public class ButtonController : MonoBehaviour {
 		}
 	}
 	public void OnSignUp(){
-		if (IfNamePasswordIsFilledIn ()) {
+        GameObject.Find("Notation").GetComponent<Text>().text = "";
+        if (IfNamePasswordIsFilledIn ()) {
 			//NCMBUserのインスタンス作成 
 			NCMBUser user = new NCMBUser();
 
