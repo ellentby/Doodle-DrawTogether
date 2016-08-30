@@ -1,17 +1,19 @@
 # Doodle-DrawTogether
-同じテーマも基にして一緒に自分の落書き作品を作りましょ！
+同じテーマを基にして一緒に自分の落書き作品を作りましょ！
 <br/>
 <b>このゲームは、ニフティクラウドmobile backendのサンプルです。</b>
-<br/>
+<br/><br/>
 <img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/100.jpg"/>
 <img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/101.jpg"/>
 <img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/102.jpg"/>
 <img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/103.jpg"/>
 <h2>コンテンツ概要</h2>
 <ul>
-  <li><b>このゲームは、ニフティクラウドmobile backend(mb)のサンプルです。</b>
+  <li><b>ニフティクラウドmobile backend（下記mb）の説明</b>
     <ul>
-      <li>mbの「会員管理」、「データストア」、「ファイルストア」の三つの機能を使っています。</li>
+      <li>このゲームでは、mbの「会員管理」、「データストア」、「ファイルストア」の三つの機能を使っています。
+      	この三つの機能を、このドキュメントに説明します。
+      </li>
     </ul>
   </li>
 </ul>
@@ -19,11 +21,16 @@
 <ul>
   <li><b>ゲーム内容の説明</b>
     <ul>
-      <li>このゲームでは、ユーザーがテーマとしての簡単の線を書くことが出来る、
-      <br/>そして、テーマを基にして、自分の落書き作品を書くことも出来ます。
-      <br/>最も人気高い落書きは、本日ベストになります。（簡単なランキング機能付）
-      </li>
+      <li>このゲームでは、ユーザーがテーマとしての簡単の線を書くことが出来る、そして、テーマを基にして、自分の落書き作品を書くことも出来ます。最も人気高い落書きは、本日ベストになります。（簡単なランキング機能付）</li>
+      <li>以上のゲーム機能を、このドキュメントに説明します。 </li>
     </ul>
+  </li>
+  <li><b>ディスカッションとヒントについて</b>
+	  <ul>
+	  	<li>このドキュメントに、技術を実践に応用するため、ディスカッション問題を提供しています。
+	  	コードを見ながら、是非御自身も試して下さい！</li>
+	  	<li>質問の答えは全部プロジェクトのコードにあります。答えを探す方法は<a href="#discussionanswer">こちら</a>。</li>
+	  </ul>
   </li>
   <li><b>ゲーム開発者として、mbの便利さを利用しながら、
   <br/>プレーヤーとしても楽しみしましょ！</b></li>
@@ -59,7 +66,7 @@
     </ul>
 </ul>
 <h2 id="q1">『問題一』　ユーザー登録とログイン（会員管理）</h2>
-<h5>難易度★☆☆☆☆</h5>
+<h5>難易度/★☆☆☆☆</h5>
 <ul>
   <li><b>mbの会員管理機能について</b><br/>
   	<p>ニフティクラウドmobile backendが提供する機能の一つ。アプリ利用者に会員登録を意識させない形で会員管理を行えます。
@@ -102,6 +109,9 @@
   </li>
   <li><b>ディスカッション</b>
   <br/>ログインとログアウトの機能を挑戦しませんか？ ┃難易度★☆☆☆☆
+  <br/><b>【アンサー】</b></br>
+  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/master/Assets/script/ButtonController.cs">ログインの答え</a>
+  search key: onLogin
   </li>
   <li><b>ヒント</b>
   <br/>- ニックネームとパスワード両方の輸入が必要ため、チェックファンクションが必要。
@@ -119,6 +129,11 @@
   <li><b>ヒント</b></li>
   <li><b>ディスカッション</b></li>
 </ul>
+<h2 id="discussionanswer">ディスカッションの答えを探す方法</h2>
+<p>1. 提供されたURLをクリックして下さい。<br/>
+2. Ctrl+Fを押し下さい（MACの場合、Command＋F）。<br/>
+3. 出できた検査ボクスに提供されたsearch keyを輸入して「Enter」を押して下さい。
+</p>
 <h2>お問い合わせ</h2>
 <p>このゲームについての質問は、作者のE－メールに投稿ください。
 <br/>作者のE－メール：ellentby@163.com</p>
