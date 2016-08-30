@@ -30,7 +30,8 @@
 </ul>
 <h2 id="keyquestion">キー問題</h2>
 <ul>
-  <li><a href="#q1">ユーザー登録とログイン（会員管理）</a></li>
+  <li><a href="#q1">ユーザー登録とログイン（会員管理）</a>
+  ★☆☆☆☆</li>
   <li>落書きを描く機能</li>
   <li>画像の保存と取得（ファイルストア）</li>
   <li>画像関するデーターの保存と取得（データーストア）</li>
@@ -58,6 +59,7 @@
     </ul>
 </ul>
 <h2 id="q1">『問題一』　ユーザー登録とログイン（会員管理）</h2>
+<h5>難易度★☆☆☆☆</h5>
 <ul>
   <li><b>mbの会員管理機能について</b><br/>
   	<p>ニフティクラウドmobile backendが提供する機能の一つ。アプリ利用者に会員登録を意識させない形で会員管理を行えます。
@@ -95,18 +97,18 @@
   ユニティーに戻って、「登録」ボタンをクリックする。ボタンのOnClickファンクションを以下のように設置します。
   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/onclick.jpg"></p>
    Gameobjectの「Controller」をクリックして、ニックネームとパスワードの入力ボックスを「nameInput」と「passwordInput」にドラッグします。
-  <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/controllersetting.jpg"></p>
+  <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/conse.jpg"></p>
    以上は、登録効能の基本でした。
+  </li>
+  <li><b>ディスカッション</b>
+  <br/>ログインとログアウトの機能を挑戦しませんか？ ┃難易度★☆☆☆☆
   </li>
   <li><b>ヒント</b>
   <br/>- ニックネームとパスワード両方の輸入が必要ため、チェックファンクションが必要。
   <br/>- SignUpAsync()ファンクションは、シンクロファンクションではありません。
   </li>
-  <li><b>ディスカッション</b>
-  <br/>ログインとログアウトの機能を挑戦しませんか？
-  </li>
 </ul>
-<a href="#keyquestion">問題リストに戻る</a>
+<span><a href="#keyquestion">問題リストに戻る</a></span>
 <h2>『問題二』　落書きを描く機能</h2>
 <ul>
   <li><b>キーコード</b><br/>
