@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 tutor
+=======
+master
+>>>>>>> refs/remotes/origin/master
