@@ -25,7 +25,7 @@
       <li>以上のゲーム機能を、このドキュメントに説明します。 </li>
     </ul>
   </li>
-  <li><b>ディスカッションとヒントについて</b>
+  <li><b>ディスカッションについて</b>
 	  <ul>
 	  	<li>このドキュメントに、技術を実践に応用するため、ディスカッション問題を提供しています。
 	  	コードを見ながら、是非御自身も試して下さい！</li>
@@ -74,10 +74,11 @@
   	</p>
   </li>
   <li><b>キーコード</b>
-  <p>先ずは、ニックネーム、パスワードを輸入するための「InputField」（UGUI Component）と登録、ログインのボタンを作ります。<br/>
-  「ButtonContrller」と言うC#スクリプトと「Controller」と言うGameobjectを生成して、スクリプトをGameobjectにつきます。
+  <p>1. 先ずは、ニックネーム、パスワードを輸入するための「InputField」（UGUI Component）と登録、ログインのボタンを作ります。<br/>
+  2.「ButtonContrller」と言うC#スクリプトを生成します。<br/>
+  3. 「Scene」で「Controller」と言うGameobjectを生成して、「ButtonController」をGameobjectにつきます。
   </p>
-  「ButtonController」の中は、ボタンのクリックエベントを処理するためのコードです。<br/>
+  「ButtonController」の中は、ボタンのクリックイベントを処理するためのコードです。<br/>
   登録ボタンを処理するコードは以下：
   <pre>
 	public InputField nameInput;
@@ -101,21 +102,24 @@
 		});
 	}
   </pre>
-  ユニティーに戻って、「登録」ボタンをクリックする。ボタンのOnClickファンクションを以下のように設置します。
+  ユニティーに戻って、「登録」ボタンをクリックする。ボタンのOnClickファンクションの所に、「＋」マックをクリックして下さい。
+　<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/redhi.jpg"/></p>
+  「Controller」を下にドラッグし、OnSignUp()ファンクションを選択します。
   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/onclick.jpg"></p>
-   Gameobjectの「Controller」をクリックして、ニックネームとパスワードの入力ボックスを「nameInput」と「passwordInput」にドラッグします。
+   「Controller」をクリックして、ニックネームとパスワードの入力ボックスを「nameInput」と「passwordInput」にドラッグします。
   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/conse.jpg"></p>
    以上は、登録効能の基本でした。
   </li>
   <li><b>ディスカッション</b>
   <br/>ログインとログアウトの機能を挑戦しませんか？ ┃難易度★☆☆☆☆
   <br/><b>【アンサー】</b></br>
-  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/master/Assets/script/ButtonController.cs">ログインの答え</a>
-  search key: onLogin
+  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ButtonController.cs">ログインの答え</a>
+  search key: Discussion 1 Log In
   </li>
   <li><b>ヒント</b>
   <br/>- ニックネームとパスワード両方の輸入が必要ため、チェックファンクションが必要。
-  <br/>- SignUpAsync()ファンクションは、シンクロファンクションではありません。
+  <br/>- SignUpAsync()ファンクションは、同調ファンクションではありません。
+　<br/>- ボタンにGameobjectをドラッグし、クリックイベントを処理するためのファンクションを選ぶ、と言うことはUnity専有の機能で、使い安いです。
   </li>
 </ul>
 <span><a href="#keyquestion">問題リストに戻る</a></span>
