@@ -39,3 +39,15 @@ Thumbs.db
 *.log #log files, for some plugins
 *.pyc #python bytecode cache, for some plugins.
 sysinfo.txt #Unity3D Generated File On Crash Reports
+*.mdb
+Library/ScriptAssemblies/Assembly-CSharp.dll
+Assets/StreamingAssets/build_info.txt
+Assets/StreamingAssets/build_info.txt
+*.dwlt
+Library/expandedItems
+Assets/StreamingAssets/build_info.txt
+*.dwlt
+Library/metadata/07/0784b9e2e802c4862b7946900d04d87c
+*.dll
+Library/ScriptAssemblies/Assembly-CSharp.dll
+*.mdb
