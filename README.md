@@ -127,19 +127,103 @@
 </ul>
 <span><a href="#keyquestion">問題リストに戻る</a></span>
 <h2>『問題二』　落書きを描く機能</h2>
+<h5>難易度/★★★★☆</h5>
 <ul>
+  <li>機能の説明<br/>
+      この機能では、UnityEngineの「LineRenderer」と言うクラスを使っています。<br/>
+     「LineRender」のメソッド「SetPosition()」と「SetPositions()」を利用して、線の頂点を設置することができます。<br/>
+      でも、一つのLineRenderは一つの線しか画けません。そして、一つのGameobjectは、一つのLineRendererだけに対応する。<br/>
+　　　ですから、毎回新しい線を画きたいとき、スクリプトで新しいGameobjectが生成する。<br/>
+      「LineRenderer」の関して、Unityの<a href="http://docs.unity3d.com/jp/current/ScriptReference/LineRenderer.html">ドキュメント</a>をご参考下さい。
+  </li>
   <li><b>キーコード</b><br/>
+　1. 「DrawLine」と言うスクリプトを生成します。<br/>
+　2. 「DrawLine」で、「defaultRenderer」と言うLineRendererを定義し、設定します。
   <pre>
-    blabla...
+   defaultRenderer = gameObject.GetComponent();
+   defaultRenderer.material = new Material (shader);
+   defaultRenderer.SetVertexCount (0);
+   defaultRenderer.SetWidth (0.1f, 0.1f);
+   defaultRenderer.SetColors (Color.green, Color.green);
+   defaultRenderer.useWorldSpace = true;
+  </pre>
+　3. シーンで、「Line0」と言うGameobjectを生成します。「LineRenderer」を「Line0」に付きます。<br/>
+　4. シーンで「DrawingPanel」と言うパネルを生成し、スクリプトから獲得します。（この「DrawingPanel」は、スクリーンの上で絵を書くエリアです。）
+  <pre>
+  panel = GameObject.Find ("DrawingPanel");
+　</pre>
+　5. 以下のコードをUpdate()に追加します。
+  <pre>
+	if (Input.GetMouseButtonDown (0)) {
+            //to check if this line renderer is used. If it is, create a new line renderer(on a new Gameobject)
+            //(so that more than 1 lines can be rendered)
+            if(!used){
+                used = true;
+                isMousePressed = true;
+                defaultRenderer.SetVertexCount (0);
+                pointList.RemoveRange (0, pointList.Count);
+            }else if(!newCreated){
+                //to draw more than 1 lines, we have to create a new gameObejct
+                GameObject newRenderer = GameObject.Instantiate (rendererPrefab);
+                newCreated = true;
+                newRenderer.GetComponent ().init();
+            }
+        }
+        if (Input.GetMouseButtonUp (0)) {
+            isMousePressed = false;}
+        if (isMousePressed && IfInDrawingCanvas()) {
+		mousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		mousePos.z = 0;
+		if (!pointList.Contains (mousePos)) {
+			pointList.Add (mousePos);
+			defaultRenderer.SetVertexCount (pointList.Count);
+			defaultRenderer.SetPosition (pointList.Count - 1, (Vector3)pointList [pointList.Count - 1]);
+		}
+	}
+  </pre>
+  以上のスクリプトで使う変数の定義：
+  <pre>
+	private bool isMousePressed = false;
+	public List<Vector3> pointList;
+	private Vector3 mousePos;
+	private LineRenderer defaultRenderer;
+	private bool used = false;
+	private bool newCreated = false;
+	//Prefeb of Gameobject "Line0"
+	public GameObject rendererPrefab;
+	private GameObject panel;
+  </pre>
+  以上のスクリプトで使う関数：
+　<pre>
+	bool IfInDrawingCanvas(){
+		if (Screen.height - Input.mousePosition.y < (-panel.GetComponent<RectTransform> ().offsetMax.y) ||
+		   Screen.height - Input.mousePosition.y > (Screen.height - panel.GetComponent<RectTransform> ().offsetMin.y)) {
+			return false;
+		}
+		if (Input.mousePosition.x < panel.GetComponent<RectTransform>().offsetMin.x || 
+			Input.mousePosition.x > (Screen.width + panel.GetComponent<RectTransform>().offsetMax.x)){ 
+			return false;
+		}
+		return true;
+	}
+	public void init(){
+		used = true;
+		isMousePressed = true;
+		pointList.RemoveRange (0, pointList.Count);
+	}
   </pre>
   </li>
-  <li><b>ヒント</b></li>
-  <li><b>ディスカッション</b></li>
+  <li><b>ヒント</b><br/>
+  複数の線を画く方法を紹介しましだが、もし、一つの線だけ画きたい場合、<a href="http://qiita.com/kwst/items/ad61e72562a8bcd9a9f7">こちら</a>をご参考下さい。
+ </li>
+  <li><b>ディスカッション</b><br/>
+  線の色や、ブラッシュのサイズを変えてみますか？┃難易度★★★☆☆</li>
 </ul>
 <h2 id="discussionanswer">ディスカッションの答えを探す方法</h2>
 <p>1. 提供されたURLをクリックして下さい。<br/>
 2. Ctrl+Fを押し下さい（MACの場合、Command＋F）。<br/>
 3. 出できた検査ボクスに提供されたsearch keyを輸入して「Enter」を押して下さい。
+<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/searchbox.JPG"/>
 </p>
 <h2>お問い合わせ</h2>
 <p>このゲームについての質問は、作者のE－メールに投稿ください。
