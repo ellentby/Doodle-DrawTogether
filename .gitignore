@@ -51,3 +51,6 @@ Library/metadata/07/0784b9e2e802c4862b7946900d04d87c
 *.dll
 Library/ScriptAssemblies/Assembly-CSharp.dll
 *.mdb
+Assets/StreamingAssets/build_info.txt
+*.dll
+Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb

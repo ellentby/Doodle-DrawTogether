@@ -120,7 +120,8 @@ public class ButtonController : MonoBehaviour {
 		Application.LoadLevel ("title");
 	}
 
-	public void OnQuitGame(){
+    //Discussion 2 Log Out
+    public void OnQuitGame(){
         NCMBUser.LogOutAsync((NCMBException e) => {
             if (e != null)
             {
