@@ -128,7 +128,6 @@ public class ButtonController : MonoBehaviour {
             }
             else
             {
-
                 Application.Quit();
             }
         });

@@ -42,3 +42,6 @@ sysinfo.txt #Unity3D Generated File On Crash Reports
 *.mdb
 Library/ScriptAssemblies/Assembly-CSharp.dll
 Assets/StreamingAssets/build_info.txt
+Assets/StreamingAssets/build_info.txt
+*.dwlt
+Library/expandedItems
