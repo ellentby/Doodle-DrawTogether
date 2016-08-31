@@ -62,7 +62,7 @@
     <ul>
       <li>新しい2Dプロジェクトを作成する</li>
       <li>mb SDKを<a href="http://mb.cloud.nifty.com/doc/current/introduction/quickstart_unity.html#SDKのダウンロード">インストール</a></li>
-      <li>SDKを<a href="http://mb.cloud.nifty.com/doc/current/introduction/quickstart_unity.html#APIキーの設定とSDKの初期化">初期化</a></a>
+      <li>SDKを<a href="http://mb.cloud.nifty.com/doc/current/introduction/quickstart_unity.html#APIキーの設定とSDKの初期化">初期化</a></a><b>（自分のAPI KeyとClient Keyを「NCMBSetting」に輸入して下さい）</b>
     </ul>
 </ul>
 <h2 id="q1">『問題一』　ユーザー登録とログイン（会員管理）</h2>
@@ -114,7 +114,10 @@
   <br/>ログインとログアウトの機能を挑戦しませんか？ ┃難易度★☆☆☆☆
   <br/><b>【アンサー】</b></br>
   <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ButtonController.cs">ログインの答え</a>
-  search key: Discussion 1 Log In
+  search key: Discussion 1 Log In<br/>
+  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ButtonController.cs">ログアウトの答え</a>
+　search key: Discussion 2 Log Out<br/>
+  <a href="#discussionanswer">答えを探す方法</a>
   </li>
   <li><b>ヒント</b>
   <br/>- ニックネームとパスワード両方の輸入が必要ため、チェックファンクションが必要。
