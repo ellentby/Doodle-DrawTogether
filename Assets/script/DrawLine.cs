@@ -13,10 +13,6 @@ public class DrawLine : MonoBehaviour {
 	private int id = 1;
 	private GameObject panel;
 	public Shader shader;
-	struct myLine{
-		public Vector3 StartPoint;
-		public Vector3 EndPoint;
-	};
 
 	void Awake(){
 		panel = GameObject.Find ("DrawingPanel");
@@ -64,7 +60,7 @@ public class DrawLine : MonoBehaviour {
 	}
 	//To draw just in the area of panel
 	//(mousePosition)y of the bottom is 0, top is the max
-	//offsetMin.y is the y of the botton, which is the max
+	//offsetMin.y is the y of the bottom, which is the max
 	//offsetMax.y is the y of the top, which is under 0
 	bool IfInDrawingCanvas(){
 		if (Screen.height - Input.mousePosition.y < (-panel.GetComponent<RectTransform> ().offsetMax.y) ||

@@ -45,3 +45,13 @@ Assets/StreamingAssets/build_info.txt
 Assets/StreamingAssets/build_info.txt
 *.dwlt
 Library/expandedItems
+*.suo
+Library/assetDatabase3
+*.dwlt
+Library/expandedItems
+Library/metadata/de/de049cc12b0d74c66b6f57f7617a2633
+*.dll
+Library/shadercompiler-UnityShaderCompiler.exe2.log
+*.log
+Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+*.dll
