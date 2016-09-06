@@ -41,7 +41,8 @@
   ★☆☆☆☆</li>
   <li><a href="#q2">落書きを描く機能</a>
   ★★★★☆</li>
-  <li>画像の保存と取得（ファイルストア）</li>
+  <li><a href="#q3">画像の保存と取得（ファイルストア）</a>
+  ★★☆☆☆</li>
   <li>画像関するデーターの保存と取得（データーストア）</li>
   <li>人気ランキング機能（データーストア）</li>
 </ul>
@@ -221,9 +222,89 @@
  </li>
   <li><b>ディスカッション</b><br/>
   線の色や、ブラッシュのサイズを変えてみますか？┃難易度★★★☆☆</li>
-  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/DrawLine.cs">答え</a>　search key: Set linerenderer's color and size <br/>
+  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/DrawLine.cs">答え</a>　
+search key: Discussion 3 Set linerenderer's color and size<br/>
   <a href="#discussionanswer">答えを探す方法</a>
 </ul>
+<span><a href="#keyquestion">問題リストに戻る</a></span>
+
+<h2 id="q3">『問題三』　画像の保存と取得（ファイルストア）</h2>
+<h5>難易度/★★☆☆☆</h5>
+<ul>
+  <li><b>mbのファイルストア機能について</b><br/>
+  	<p>ニフティクラウドmobile backendが提供している、画像やテキスト、音楽などさまざまな種類のファイルを保存することができるストレージ機能です。
+  	詳しくのは<a href="http://mb.cloud.nifty.com/doc/current/filestore/basic_usage_unity.html">ドキュメント</a>を参考下さい。
+  	</p>
+  </li>
+  <li><b>キーコード</b>
+  <h5>Step 1 スクリーンショットに通して、画像をゲットする</h5>
+  <p>このステップは、「SaveImage」スクリプトの「saveImage()」関数で行う。この関数は、インプットとするGameobjectのエリヤだけを
+  スクリーンショットすることができます。</p>
+  <pre>
+  	public void saveImage (GameObject go) {
+		float width = Screen.width + go.GetComponent<RectTransform>().offsetMax.x - go.GetComponent<RectTransform>().offsetMin.x;
+		float height = Screen.height - go.GetComponent<RectTransform> ().offsetMin.y + go.GetComponent<RectTransform> ().offsetMax.y;
+	
+		renderTexture = new RenderTexture (Screen.width, Screen.height, 0);
+		camera.targetTexture = renderTexture;
+		camera.Render ();
+
+		RenderTexture.active = renderTexture;
+		Texture2D virtualPhoto =
+			new Texture2D((int)width, (int)height, TextureFormat.RGB24, false);
+		// false, meaning no need for mipmaps
+		virtualPhoto.ReadPixels( new Rect(go.GetComponent<RectTransform>().offsetMin.x, 
+			go.GetComponent<RectTransform>().offsetMin.y, 
+			width, height), 0, 0);
+
+		RenderTexture.active = null; //can help avoid errors 
+		camera.targetTexture = null;
+
+		//pngの転換する
+		byte[] bytes;
+		bytes = virtualPhoto.EncodeToPNG();
+		saveToCloud (bytes,getName());
+	}
+  </pre>
+  <h5>Step 2 画像をクラウドに保存する</h5>
+  <p>ここで、mbのSDKを使います。簡単なコードで、クラウドに保存できます。以下のコードで使われる関数「saveImageData()」は、次の問題で話します。</p>
+  <pre>
+  	void saveToCloud(byte[] bytes, string name){
+		NCMBFile file = new NCMBFile (name, bytes);
+		file.SaveAsync ((NCMBException error) => {
+			if (error != null) {
+				Debug.Log("upload error");
+                showError(error);
+				// 失敗
+			} else {
+				saveImageData(name);
+			}
+		});
+	}
+  </pre>
+  <h5>Step 3 Unityの設定</h5>
+  <p>「SaveImage.cs」を「Drawing」シーンの中の「Controller」に付き、MainCameraを「Camera」の所にドラッグします。</p>
+  <img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/saimg.JPG"/>
+  </li>
+  <li><b>ディスカッション</b>
+  <br/>クラウドから画像を取得することも同じく簡単です！ ┃難易度★☆☆☆☆
+  <br/>クラウドから画像を取得した画像のタイプはbyte[]ですが、どうやってUnityに使えますか？ ┃難易度★★☆☆☆
+  <br/><b>【アンサー】</b></br>
+  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ThemeImageController.cs">画像取得の答え</a>
+  search key: Discussion 4 Load from cloud<br/>
+  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ThemeImageController.cs">byte[]の答え</a>
+　search key: Discussion 5 Deal with byte[] data<br/>
+  <a href="#discussionanswer">答えを探す方法</a>
+  </li>
+  <li><b>ヒント</b>
+  <br/>- ログインと同じ、ファイルの保存と取得も同調ではないです。
+  <br/>- クラウドに保存したファイルは、mbの<a href="https://console.mb.cloud.nifty.com">管理画面</a>で見られます。
+  「アプリ設定」⇒「データ-ファイルストア」の「HTTPSでの取得」を「有効」にしたら、ファイルの公開URLが取得できます。とても便利な機能です。
+  </li>
+</ul>
+<span><a href="#keyquestion">問題リストに戻る</a></span>
+
+
 <h2 id="discussionanswer">ディスカッションの答えを探す方法</h2>
 <p>1. 提供されたURLをクリックして下さい。<br/>
 2. Ctrl+Fを押し下さい（MACの場合、Command＋F）。<br/>
