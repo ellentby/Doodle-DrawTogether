@@ -7,7 +7,7 @@
 <img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/101.jpg"/>
 <img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/102.jpg"/>
 <img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/103.jpg"/>
-<h2>コンテンツ概要</h2>
+<h2 id="contents">コンテンツ概要</h2>
 <ul>
   <li><b>ニフティクラウドmobile backend（下記mb）の説明</b>
     <ul>
@@ -32,14 +32,15 @@
 	  	<li>質問の答えは全部プロジェクトのコードにあります。答えを探す方法は<a href="#discussionanswer">こちら</a>。</li>
 	  </ul>
   </li>
-  <li><b>ゲーム開発者として、mbの便利さを利用しながら、
-  <br/>プレーヤーとしても楽しみしましょ！</b></li>
+  <li><b>開発者として、mbの便利さを利用しながら、
+  <br/>ゲームプレーヤーとしての嬉しさも楽しもう！</b></li>
 </ul>
 <h2 id="keyquestion">キー問題</h2>
 <ul>
   <li><a href="#q1">ユーザー登録とログイン（会員管理）</a>
   ★☆☆☆☆</li>
-  <li>落書きを描く機能</li>
+  <li><a href="#q2">落書きを描く機能</a>
+  ★★★★☆</li>
   <li>画像の保存と取得（ファイルストア）</li>
   <li>画像関するデーターの保存と取得（データーストア）</li>
   <li>人気ランキング機能（データーストア）</li>
@@ -126,14 +127,14 @@
   </li>
 </ul>
 <span><a href="#keyquestion">問題リストに戻る</a></span>
-<h2>『問題二』　落書きを描く機能</h2>
+<h2 id="q2">『問題二』　落書きを描く機能</h2>
 <h5>難易度/★★★★☆</h5>
 <ul>
   <li>機能の説明<br/>
       この機能では、UnityEngineの「LineRenderer」と言うクラスを使っています。<br/>
      「LineRender」のメソッド「SetPosition()」と「SetPositions()」を利用して、線の頂点を設置することができます。<br/>
-      でも、一つのLineRenderは一つの線しか画けません。そして、一つのGameobjectは、一つのLineRendererだけに対応する。<br/>
-　　　ですから、毎回新しい線を画きたいとき、スクリプトで新しいGameobjectが生成する。<br/>
+      でも、一つのLineRenderは一つの線しか画けません。そして、一つのGameobjectは、一つのLineRendererだけに対応する。
+　　　<br/>ですから、毎回新しい線を画きたいとき、スクリプトで新しいGameobjectが生成する。<br/>
       「LineRenderer」の関して、Unityの<a href="http://docs.unity3d.com/jp/current/ScriptReference/LineRenderer.html">ドキュメント</a>をご参考下さい。
   </li>
   <li><b>キーコード</b><br/>
@@ -223,11 +224,13 @@
 <p>1. 提供されたURLをクリックして下さい。<br/>
 2. Ctrl+Fを押し下さい（MACの場合、Command＋F）。<br/>
 3. 出できた検査ボクスに提供されたsearch keyを輸入して「Enter」を押して下さい。
-<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/searchbox.JPG"/>
+<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/searchbox.JPG"/><br/>
+4. コメントとその下のコードはあなたが探したい答えですよ！(つ´ω`)つ<br/>
+<a href="#contents">「コンテンツ概要」に戻る</a>
 </p>
 <h2>お問い合わせ</h2>
 <p>このゲームについての質問は、作者のE－メールに投稿ください。
 <br/>作者のE－メール：ellentby@163.com</p>
 <p>mbに質問、意見など、<a href="http://mb.cloud.nifty.com/faq.htm">こちら</a>に参考して下さい。
-<br/>a或いは、<a href="https://github.com/NIFTYCloud-mbaas/UserCommunity">こちら</a>に投稿ください。
+<br/>或いは、<a href="https://github.com/NIFTYCloud-mbaas/UserCommunity">こちら</a>に投稿してください。
 </p>
