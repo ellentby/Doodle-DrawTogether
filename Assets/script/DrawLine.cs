@@ -91,6 +91,7 @@ public class DrawLine : MonoBehaviour {
 		isMousePressed = false;
 	}
 
+    //Discussion 3 Set linerenderer's color and size
 	private void setLineColor(){
 		Color color = GameObject.Find ("Controller").GetComponent<ButtonController> ().lineColor;
 		defaultRenderer.SetColors (color, color);
