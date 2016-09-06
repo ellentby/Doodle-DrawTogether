@@ -54,3 +54,5 @@ Library/ScriptAssemblies/Assembly-CSharp.dll
 Assets/StreamingAssets/build_info.txt
 *.dll
 Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb
+*.txt
+Library/assetDatabase3
