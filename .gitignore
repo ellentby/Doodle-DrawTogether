@@ -55,3 +55,9 @@ Library/shadercompiler-UnityShaderCompiler.exe2.log
 *.log
 Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
 *.dll
+*.suo
+Assets/StreamingAssets/build_info.txt
+*.dwlt
+Library/expandedItems
+*.mdb
+Library/ScriptAssemblies/Assembly-CSharp.dll
