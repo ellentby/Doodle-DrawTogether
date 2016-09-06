@@ -148,12 +148,12 @@
    defaultRenderer.SetColors (Color.green, Color.green);
    defaultRenderer.useWorldSpace = true;
   </pre>
-　3. シーンで、「Line0」と言うGameobjectを生成します。「LineRenderer」を「Line0」に付きます。<br/>
-　4. シーンで「DrawingPanel」と言うパネルを生成し、スクリプトから獲得します。（この「DrawingPanel」は、スクリーンの上で絵を書くエリアです。）
+　3. シーンで、「Line0」と言うGameobjectを生成します。「Add　Component」の所で、「LineRenderer」を生成します。<br/>
+　4. シーンで「DrawingPanel」と言うパネルを生成し、以下のコードに通し、スクリプトから獲得します。（この「DrawingPanel」は、スクリーンの上で絵を書くエリアです。）
   <pre>
   panel = GameObject.Find ("DrawingPanel");
 　</pre>
-　5. 以下のコードをUpdate()に追加します。
+　5. 以下のコードを「DrawLine.cs」のUpdate()函数に追加します。
   <pre>
 	if (Input.GetMouseButtonDown (0)) {
             //to check if this line renderer is used. If it is, create a new line renderer(on a new Gameobject)
@@ -182,7 +182,7 @@
 		}
 	}
   </pre>
-  以上のスクリプトで使う変数の定義：
+  以上のスクリプトが使う変数の定義：
   <pre>
 	private bool isMousePressed = false;
 	public List<Vector3> pointList;
@@ -194,8 +194,9 @@
 	public GameObject rendererPrefab;
 	private GameObject panel;
   </pre>
-  以上のスクリプトで使う関数：
+  以上のスクリプトが使う関数：
 　<pre>
+	//マウスは「DrawingPanel」のエリアにあるがどうか確認する
 	bool IfInDrawingCanvas(){
 		if (Screen.height - Input.mousePosition.y < (-panel.GetComponent<RectTransform> ().offsetMax.y) ||
 		   Screen.height - Input.mousePosition.y > (Screen.height - panel.GetComponent<RectTransform> ().offsetMin.y)) {
@@ -207,6 +208,7 @@
 		}
 		return true;
 	}
+	//「DrawLine」を初期化する
 	public void init(){
 		used = true;
 		isMousePressed = true;
@@ -215,10 +217,12 @@
   </pre>
   </li>
   <li><b>ヒント</b><br/>
-  複数の線を画く方法を紹介しましだが、もし、一つの線だけ画きたい場合、<a href="http://qiita.com/kwst/items/ad61e72562a8bcd9a9f7">こちら</a>をご参考下さい。
+  複数の線を画く方法を紹介しましだが、もし、一本の線だけ画きたい場合、<a href="http://qiita.com/kwst/items/ad61e72562a8bcd9a9f7">こちら</a>をご参考下さい。
  </li>
   <li><b>ディスカッション</b><br/>
   線の色や、ブラッシュのサイズを変えてみますか？┃難易度★★★☆☆</li>
+  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/DrawLine.cs">答え</a>　search key: Set linerenderer's color and size <br/>
+  <a href="#discussionanswer">答えを探す方法</a>
 </ul>
 <h2 id="discussionanswer">ディスカッションの答えを探す方法</h2>
 <p>1. 提供されたURLをクリックして下さい。<br/>
