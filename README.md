@@ -43,8 +43,9 @@
   ★★★★☆</li>
   <li><a href="#q3">画像の保存と取得（ファイルストア）</a>
   ★★☆☆☆</li>
-  <li>画像関するデーターの保存と取得（データーストア）</li>
-  <li>人気ランキング機能（データーストア）</li>
+  <li><a href="#q4">画像に関するデーターの保存と取得（データストア）</a>
+  ★☆☆☆☆</li>
+  <li>人気ランキング機能（データストア）</li>
 </ul>
 <h2>事前準備</h2>
 <ul>
@@ -238,8 +239,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   </li>
   <li><b>キーコード</b>
   <h5>Step 1 スクリーンショットに通して、画像をゲットする</h5>
-  <p>このステップは、「SaveImage」スクリプトの「saveImage()」関数で行う。この関数は、インプットとするGameobjectのエリヤだけを
-  スクリーンショットすることができます。</p>
+  <p>このステップは、「SaveImage」スクリプトの「saveImage()」関数で行う。スクリーンショットをする範囲は、インプットされたGameobjectのエリアだけです。</p>
   <pre>
   	public void saveImage (GameObject go) {
 		float width = Screen.width + go.GetComponent<RectTransform>().offsetMax.x - go.GetComponent<RectTransform>().offsetMin.x;
@@ -304,6 +304,87 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
 </ul>
 <span><a href="#keyquestion">問題リストに戻る</a></span>
 
+
+<h2 id="q4">『問題四』　画像に関するデーターの保存と取得（データストア）</h2>
+<h5>難易度/★☆☆☆☆</h5>
+<ul>
+  <li><b>mbのデータストア機能について</b><br/>
+  	<p>ニフティクラウドが提供している、アプリで利用されるデータを保存・共有することができるデータベース機能です。
+  	詳しくのは<a href="http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html">ドキュメント</a>を参考下さい。
+  	</p>
+  </li>
+  <li><b>キーコード</b>
+  <p>
+  	画像をクラウドに保存するだけではなく、画像に関するデーター（画像の名前、描いた人のニックネームなど）も保存する必要あります。それが、画像を検査する時の証拠になるますから。
+  </p>
+  <h5> データーを保存する場合
+  <p>
+  	mbのSDKに通して、簡単にデーターを保存できます。
+  </p>
+  	<pre>
+  	void saveImageData(string filename){
+		NCMBObject obj = new NCMBObject ("DoodleRecord");
+		obj.Add ("username", Configuration.username);
+		obj.Add ("filename", filename);
+		obj.Add ("date", DateTime.Now.Date);
+		obj.Add ("theme", Configuration.theme);
+		obj.Add ("likes", 0);
+		
+		obj.Save ((NCMBException e) => {      
+			if (e != null) {
+				Debug.Log("save data error");
+			} else {
+				//成功時の処理
+				if(Configuration.status == Status.newTheme){
+					Application.LoadLevel("themes");
+				}else if(Configuration.status == Status.newDoodle){
+					Application.LoadLevel("doodles");
+				}
+			}                   
+		});
+	}
+  	</pre>
+  <h5>データーを取得する場合</h5>
+  <p>
+  	データーを取得する時、先ずは検索の条件を決まります。sqlと同じ、mbのSDKは、「NCMBQuery.WhereEqualTo(KEY,VALUE)」、「limit」、「skip」などの関数に通して、検索条件を指定できます。詳しくは<a href="http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html#基本的な検索の利用">ドキュメント</a>をご参考ください。
+  </p>
+  <pre>
+  	void loadImages(){
+		//QueryTestを検索するクラスを作成
+		NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("DoodleRecord");
+		//Scoreの値が7と一致するオブジェクト検索
+		query.WhereEqualTo ("date", DateTime.Now.Date);
+		query.WhereEqualTo ("type", pictureType);
+		if (pictureType == "doodle") {
+			query.WhereEqualTo ("theme", Configuration.theme);
+		}
+		query.OrderByDescending ("createDate");
+		//取得件数の指定
+		query.Limit = maxCountInPage;
+		//取得開始位置の指定
+		query.Skip = page * maxCountInPage;
+		query.FindAsync ((List<NCMBObject> objList ,NCMBException e) => {
+			if (e != null) {
+				//検索失敗時の処理
+			} else {
+				//Scoreが7のオブジェクトを出力
+				foreach (NCMBObject obj in objList) {
+					//ファイルネームに通し、画像をクラウドからダウンロードする
+					NextImageIndex();
+					imageData.Add(obj);
+					InitLike(nowImageIndex);
+					loadOneImageTo(obj["filename"].ToString(), nowImageIndex);
+				}
+			}
+		});
+	}
+  </pre>
+  </li>
+  <li><b>ヒント</b>
+  <br/>- データを保存するとき、NCMBObject.save()とNCMBObject.saveAsync()の二つの関数を使えます。save()は同時処理で、saveAsync()は非同時処理ですが、どちらを使うのは状況次第です。
+  </li>
+</ul>
+<span><a href="#keyquestion">問題リストに戻る</a></span>
 
 <h2 id="discussionanswer">ディスカッションの答えを探す方法</h2>
 <p>1. 提供されたURLをクリックして下さい。<br/>
