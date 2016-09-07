@@ -45,7 +45,8 @@
   ★★☆☆☆</li>
   <li><a href="#q4">画像に関するデーターの保存と取得（データストア）</a>
   ★☆☆☆☆</li>
-  <li>人気ランキング機能（データストア）</li>
+  <li><a href="#q5">人気ランキング機能（データストア）</a>
+  ★★★☆☆</li>
 </ul>
 <h2>事前準備</h2>
 <ul>
@@ -386,17 +387,47 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
 </ul>
 <span><a href="#keyquestion">問題リストに戻る</a></span>
 
+
+<h2 id="q5">『問題五』　人気ランキング機能（データストア）</h2>
+<h5>難易度/★★★☆☆</h5>
+<ul>
+  <li><b>mbのデータストア機能について</b><br/>
+  	<p><a href="#q4">問題四</a>の「mbのデータストア機能について」部分をご覧ください。
+  	</p>
+  </li>
+  <li><b>キーコード</b>
+
+  </li>
+  <li><b>ディスカッション</b>
+  <br/>クラウドから画像を取得することも同じく簡単です！ ┃難易度★☆☆☆☆
+  <br/>クラウドから画像を取得した画像のタイプはbyte[]ですが、どうやってUnityに使えますか？ ┃難易度★★☆☆☆
+  <br/><b>【アンサー】</b></br>
+  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ThemeImageController.cs">画像取得の答え</a>
+  search key: Discussion 4 Load from cloud<br/>
+  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ThemeImageController.cs">byte[]の答え</a>
+　search key: Discussion 5 Deal with byte[] data<br/>
+  <a href="#discussionanswer">答えを探す方法</a>
+  </li>
+  <li><b>ヒント</b>
+  <br/>- ログインと同じ、ファイルの保存と取得も同調ではないです。
+  <br/>- クラウドに保存したファイルは、mbの<a href="https://console.mb.cloud.nifty.com">管理画面</a>で見られます。
+  「アプリ設定」⇒「データ-ファイルストア」の「HTTPSでの取得」を「有効」にしたら、ファイルの公開URLが取得できます。とても便利な機能です。
+  </li>
+</ul>
+<span><a href="#keyquestion">問題リストに戻る</a></span>
+
+
 <h2 id="discussionanswer">ディスカッションの答えを探す方法</h2>
 <p>1. 提供されたURLをクリックして下さい。<br/>
 2. Ctrl+Fを押し下さい（MACの場合、Command＋F）。<br/>
 3. 出できた検査ボクスに提供されたsearch keyを輸入して「Enter」を押して下さい。
 <img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/searchbox.JPG"/><br/>
-4. コメントとその下のコードはあなたが探したい答えですよ！(つ´ω`)つ<br/>
+4. 検索結果とその下のコードはあなたが探したい答えですよ！(つ´ω`)つ<br/>
 <a href="#contents">「コンテンツ概要」に戻る</a>
 </p>
 <h2>お問い合わせ</h2>
-<p>このゲームについての質問は、作者のE－メールに投稿ください。
-<br/>作者のE－メール：ellentby@163.com</p>
+<p>このゲームについての質問は、作者のメールアドレスに投稿ください。
+<br/>作者のメールアドレス：ellentby@163.com</p>
 <p>mbに質問、意見など、<a href="http://mb.cloud.nifty.com/faq.htm">こちら</a>に参考して下さい。
 <br/>或いは、<a href="https://github.com/NIFTYCloud-mbaas/UserCommunity">こちら</a>に投稿してください。
 </p>
