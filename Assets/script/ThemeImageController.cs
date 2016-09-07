@@ -93,6 +93,7 @@ public class ThemeImageController : MonoBehaviour {
 		});
 	}
 
+    //Discussion 5 Deal with byte[] data
 	void SaveBytesTo(byte[] b, int index){
 		Texture2D texture = new Texture2D (100,100);
 		texture.LoadImage (b);
@@ -101,6 +102,7 @@ public class ThemeImageController : MonoBehaviour {
 		Resources.UnloadUnusedAssets(); //一定要清理游离资源。
 	}
 
+    // Discussion 4 Load from cloud
 	void loadOneImageTo(string name, int index){
 		NCMBFile file = new NCMBFile (name);
 		file.FetchAsync ((byte[] fileData, NCMBException error) => {
