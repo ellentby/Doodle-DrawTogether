@@ -28,9 +28,9 @@ public class BestImageReader : MonoBehaviour {
 		InitNowImageIndex ();
 		InitImages ();
 
-		//QueryTestを検索するクラスを作成
-		NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("DoodleRecord");
-		//Scoreの値が7と一致するオブジェクト検索
+        //DoodleRecordを検索するクラスを作成
+        NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("DoodleRecord");
+
 		query.WhereEqualTo ("date", DateTime.Now.Date);
 		query.WhereEqualTo ("type", "doodle");
 		query.OrderByDescending ("likes");
@@ -86,34 +86,6 @@ public class BestImageReader : MonoBehaviour {
 		for (int i = 0; i < maxCountInPage; i++) {
 			images [i].sprite = transSprite;
 		}
-	}
-
-	//next: +1
-	//previous: -1
-	public int SetPage(int i){
-		page = page + i;
-		if (page < 0) {
-			page = 0;
-			return page;
-		}
-		if (page > maxPage()) {
-			page = maxPage();
-			return page;
-		}
-		loadImages ();
-		return page;
-	}
-
-	int maxPage(){
-		double floor = Math.Floor ((double)imageCount / maxCountInPage);
-		double ceiling = Math.Ceiling ((double)imageCount / maxCountInPage);
-		if (floor == 0) {
-			return 0;
-		}
-		if (floor == ceiling) {
-			return (int)floor - 1;
-		}
-		return (int)floor;
 	}
 }
 
