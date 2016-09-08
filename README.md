@@ -22,7 +22,7 @@
   			<img width="400px"src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/3functions.jpg"/>
   		</li>
   		 <li><b>ゲーム機能の説明</b><br/>
-		    問題に対応しているゲームの機能を紹介します。
+		    問題に対応するゲームの機能を紹介します。
 		  </li>
 		  <li><b>主な流れ</b><br/>
 		  機能を作成する手順。キーコードとそれに関するUnityの操作を紹介します。
@@ -59,7 +59,7 @@
       <li>mbのアカウントを使って、「Doodle」と言うアプリの<a href="http://mb.cloud.nifty.com/doc/current/introduction/quickstart_unity.html#アプリの新規作成">新規作成</a>（無料）</li>
     </ul>
   </li>
-  <li><b>新しいユニティープロジェクトを作成</b>
+  <li><b>新しいUnityプロジェクトを作成</b>
     <ul>
       <li>新しい2Dプロジェクトを作成する</li>
       <li>mb SDKを<a href="http://mb.cloud.nifty.com/doc/current/introduction/quickstart_unity.html#SDKのダウンロード">インストール</a></li>
@@ -92,7 +92,7 @@
   <li><b>主な流れ</b>
   <p>1. 先ずは、ニックネーム、パスワードを輸入するための「InputField」（UGUI Component）と登録、ログインのボタンを作ります。<br/>
   2.「ButtonContrller」と言うC#スクリプトを生成します。<br/>
-  3. 「Scene」で「Controller」と言うGameobjectを生成して、「ButtonController」をGameobjectにつきます。
+  3. シーンで「Controller」と言うGameobjectを生成して、「ButtonController」をGameobjectにつきます。
   </p>
   「ButtonController」の中は、ボタンのクリックイベントを処理するためのコードです。<br/>
   登録ボタンを処理するコードは以下：
@@ -118,11 +118,11 @@
 		});
 	}
   </pre>
-  ユニティーに戻って、「登録」ボタンをクリックする。ボタンのOnClickファンクションの所に、「＋」マックをクリックして下さい。
+  4. ユニティーに戻って、「登録」ボタンをクリックする。ボタンのOnClick関数の所に、「＋」マックをクリックして下さい。
 　<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/redhi.jpg"/></p>
-  「Controller」を下にドラッグし、OnSignUp()ファンクションを選択します。
+  5. 「Controller」を下にドラッグし、OnSignUp()ファンクションを選択します。
   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/onclick.jpg"></p>
-   「Controller」をクリックして、ニックネームとパスワードの入力ボックスを「nameInput」と「passwordInput」にドラッグします。
+   6. 「Controller」をクリックして、ニックネームとパスワードの入力ボックスを「nameInput」と「passwordInput」にドラッグします。
   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/conse.jpg"></p>
    以上は、登録効能の基本でした。
   </li>
@@ -136,20 +136,20 @@
   <a href="#discussionanswer">答えを探す方法</a>
   </li>
   <li><b>ヒント</b>
-  <br/>- ニックネームとパスワード両方の輸入が必要ため、チェックファンクションが必要。
-  <br/>- SignUpAsync()ファンクションは、同調ファンクションではありません。
-　<br/>- ボタンにGameobjectをドラッグし、クリックイベントを処理するためのファンクションを選ぶ、と言うことはUnity専有の機能で、使い安いです。
+  <br/>- ニックネームとパスワード両方の輸入が必要ため、チェックする関数が必要。
+  <br/>- SignUpAsync()関数は、同期処理の関数ではありません。即ち、SignUpAsync()がコールされた後、その執行を待つではなく、コールの後のコートを執行する。
+　<br/>- ボタンにGameobjectをドラッグし、クリックイベントを処理する関数を選ぶ、と言うことはUnity専有の機能で、使い易いです。
   </li>
 </ul>
 <span><a href="#keyquestion">問題リストに戻る</a></span>
 <h2 id="q2">『問題二』　落書きを描く機能</h2>
 <h5>難易度/★★★★☆</h5>
 <ul>
-  <li>機能の説明<br/>
+  <li>描く機能の説明<br/>
       この機能では、UnityEngineの「LineRenderer」と言うクラスを使っています。<br/>
      「LineRender」のメソッド「SetPosition()」と「SetPositions()」を利用して、線の頂点を設置することができます。<br/>
-      でも、一つのLineRenderは一つの線しか画けません。そして、一つのGameobjectは、一つのLineRendererだけに対応する。
-　　　<br/>ですから、毎回新しい線を画きたいとき、スクリプトで新しいGameobjectが生成する。<br/>
+      ですが、一つのLineRenderは一本の線しか描けません。そして、一つのGameobjectは、一つのLineRendererだけに対応する。
+　　　<br/>ですから、毎回新しい線を画きたいとき、スクリプトで新しいGameobjectを生成する。<br/>
       「LineRenderer」の関して、Unityの<a href="http://docs.unity3d.com/jp/current/ScriptReference/LineRenderer.html">ドキュメント</a>をご参考下さい。
   </li>
   <li><b>主な流れ</b><br/>
@@ -232,14 +232,15 @@
   </pre>
   </li>
   <li><b>ヒント</b><br/>
-  複数の線を画く方法を紹介しましだが、もし、一本の線だけ画きたい場合、<a href="http://qiita.com/kwst/items/ad61e72562a8bcd9a9f7">こちら</a>をご参考下さい。
+  複数の線を画く方法を紹介しましだが、もし、一本の線だけ描きたい場合、<a href="http://qiita.com/kwst/items/ad61e72562a8bcd9a9f7">こちら</a>をご参考下さい。
  </li>
   <li><b>ディスカッション</b><br/>
-  線の色や、ブラッシュのサイズを変えてみますか？┃難易度★★★☆☆</li>
-  <br/><b>【アンサー】</b></br>
-　<a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/DrawLine.cs">答え</a>　
-search key: Discussion 3 Set linerenderer's color and size<br/>
-  <a href="#discussionanswer">答えを探す方法</a>
+  線の色や、ブラッシュのサイズを変えてみますか？┃難易度★★★☆☆
+  <br/><b>【アンサー】</b>
+　</br><a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/DrawLine.cs">答え</a>　
+search key: Discussion 3 Set linerenderer's color and size
+  <br/><a href="#discussionanswer">答えを探す方法</a>
+</li>
 </ul>
 <span><a href="#keyquestion">問題リストに戻る</a></span>
 
@@ -274,7 +275,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
 		RenderTexture.active = null; //can help avoid errors 
 		camera.targetTexture = null;
 
-		//pngの転換する
+		//pngに転換する
 		byte[] bytes;
 		bytes = virtualPhoto.EncodeToPNG();
 		saveToCloud (bytes,getName());
@@ -329,11 +330,11 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   </li>
   <li><b>主な流れ</b>
   <p>
-  	画像をクラウドに保存するだけではなく、画像に関するデーター（画像の名前、描いた人のニックネームなど）も保存する必要あります。それが、画像を検査する時の証拠になるますから。
+  	画像をクラウドに保存するだけではなく、画像に関するデーター（画像の名前、描いた人のニックネームなど）も保存する必要もあります。それが、画像を検索する時の証拠になるますから。
   </p>
-  <h5> データーを保存する場合
+  <h5> データを保存する場合
   <p>
-  	mbのSDKに通して、簡単にデーターを保存できます。
+  	mbのSDKに通して、簡単にデータを保存できます。
   </p>
   	<pre>
   	void saveImageData(string filename){
@@ -358,7 +359,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
 		});
 	}
   	</pre>
-  <h5>データーを取得する場合</h5>
+  <h5>データを取得する場合</h5>
   <p>
   	データーを取得する時、先ずは検索の条件を決まります。sqlと同じ、mbのSDKは、「NCMBQuery.WhereEqualTo(KEY,VALUE)」、「limit」、「skip」などの関数に通して、検索条件を指定できます。詳しくは<a href="http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html#基本的な検索の利用">ドキュメント</a>をご参考ください。
   </p>
@@ -366,7 +367,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   	void loadImages(){
 		//QueryTestを検索するクラスを作成
 		NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("DoodleRecord");
-		//Scoreの値が7と一致するオブジェクト検索
+
 		query.WhereEqualTo ("date", DateTime.Now.Date);
 		query.WhereEqualTo ("type", pictureType);
 		if (pictureType == "doodle") {
@@ -395,7 +396,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   </pre>
   </li>
   <li><b>ヒント</b>
-  <br/>- データを保存するとき、NCMBObject.save()とNCMBObject.saveAsync()の二つの関数を使えます。save()は同時処理で、saveAsync()は非同時処理ですが、どちらを使うのは状況次第です。
+  <br/>- データを保存する場合、NCMBObject.save()とNCMBObject.saveAsync()の二つの関数を使えられます。save()は同時処理で、saveAsync()は非同時処理ですが、どちらを使うのは状況次第です。
   </li>
 </ul>
 <span><a href="#keyquestion">問題リストに戻る</a></span>
@@ -412,7 +413,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   	<p>
   	「Doodle」のランキング機能は、Twitterの「いいね」と似て、作品を好きな人の数で決まります。落書き作品の右上のハートマークをクリックすると、ハート全体が赤くなって、「この作品に1票を投じました」を表示します。<br/>
   	<img height="200px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/likee.png"/>
-  	<br/>もし、赤くなったハートをもう一度クリックしたら、以上の動きを消します。
+  	<br/>もし、赤くなったハートをもう一度クリックすると、以上のアクションは消します。
   	<br/>
   	一番人気な落書きは、ゲームの主要画面の左に表示されます。クリックすると、人気一位から四位までの落書き作品が見られます。
   	<br/>
@@ -420,7 +421,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   	</p>
    </li>
   <li><b>主な流れ</b>
-  	<h5>Step 1 ハートのSpriteの定義と取得</h5>
+  	<h5>Step 1 ハートマークのSpriteの定義と取得</h5>
   	Gameobjectの「Controller」に付ける「ThemeImageController」のスクリプトの中で、以下の変数を定義する。
 	<pre>
 	//空きハートのSprite
@@ -503,7 +504,6 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
 			if (e != null) {
 				//検索失敗時の処理
 			} else {
-				//Scoreが7のオブジェクトを出力
 				foreach (NCMBObject obj in objList) {
 					Debug.Log ("delete objectId:" + obj.ObjectId);
 					obj.DeleteAsync ((NCMBException deleteError) => {
@@ -525,11 +525,6 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/BestImageReader.cs">答え</a>
   search key: Discussion 6 Download LikeRecord<br/>
   <a href="#discussionanswer">答えを探す方法</a>
-  </li>
-  <li><b>ヒント</b>
-  <br/>- ログインと同じ、ファイルの保存と取得も同調ではないです。
-  <br/>- クラウドに保存したファイルは、mbの<a href="https://console.mb.cloud.nifty.com">管理画面</a>で見られます。
-  「アプリ設定」⇒「データ-ファイルストア」の「HTTPSでの取得」を「有効」にしたら、ファイルの公開URLが取得できます。とても便利な機能です。
   </li>
 </ul>
 <span><a href="#keyquestion">問題リストに戻る</a></span>
