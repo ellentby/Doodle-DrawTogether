@@ -224,7 +224,8 @@
  </li>
   <li><b>ディスカッション</b><br/>
   線の色や、ブラッシュのサイズを変えてみますか？┃難易度★★★☆☆</li>
-  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/DrawLine.cs">答え</a>　
+  <br/><b>【アンサー】</b></br>
+　<a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/DrawLine.cs">答え</a>　
 search key: Discussion 3 Set linerenderer's color and size<br/>
   <a href="#discussionanswer">答えを探す方法</a>
 </ul>
@@ -507,13 +508,10 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   	</pre>
   </li>
   <li><b>ディスカッション</b>
-  <br/>クラウドから画像を取得することも同じく簡単です！ ┃難易度★☆☆☆☆
-  <br/>クラウドから画像を取得した画像のタイプはbyte[]ですが、どうやってUnityに使えますか？ ┃難易度★★☆☆☆
+  <br/>ランキングを表示するため、LikeRecordをクラウドからダウンロードすることが必要ですが、その方法は？ ┃難易度★★☆☆☆
   <br/><b>【アンサー】</b></br>
-  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ThemeImageController.cs">画像取得の答え</a>
-  search key: Discussion 4 Load from cloud<br/>
-  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ThemeImageController.cs">byte[]の答え</a>
-　search key: Discussion 5 Deal with byte[] data<br/>
+  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/BestImageReader.cs">答え</a>
+  search key: Discussion 6 Download LikeRecord<br/>
   <a href="#discussionanswer">答えを探す方法</a>
   </li>
   <li><b>ヒント</b>
