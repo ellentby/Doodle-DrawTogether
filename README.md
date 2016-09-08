@@ -11,10 +11,10 @@
 <img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/103.jpg"/>
 <h2 id="contents">ドキュメント概要</h2>
 <ul>
-  <li><a href="#preparation"><h3>事前準備</h3></a>
+  <li><h3><a href="#preparation">事前準備</a></h3>
   この部分で、正式な開発が始まる前に必要された手順を説明します。「Doodle」だけではなく、他のニフティクラウドmobile backend（下記mb）を利用したアプリ作りも、同じ手順を必要です。
   </li>
-  <li><a href="#keyquestion"><h3>キー問題</h3></a>
+  <li><h3><a href="#keyquestion">キー問題</a></h3>
   キー問題は、「Doodle」の核としての５つの技術問題を提出し、解説するパートです。キー問題の解説は、以下の手順で行われます。
   	<ul>
   		<li><b>mbの機能について解説</b><br/>
@@ -36,10 +36,10 @@
 		  </li>
   	</ul>
   </li>
-  <li><a href="#discussionanswer"><h3>ディスカッションの答えを探す方法</h3></a>
+  <li><h3><a href="#discussionanswer">ディスカッションの答えを探す方法</a></h3>
   	キー問題のディスカッションの部分で、質問を提出しましたが、その質問の答えを探す方法。
   </li>
-  <li><a href="#communication"><h3>お問い合わせ</h3></a>
+  <li><h3><a href="#communication">お問い合わせ</a></h3>
   ゲーム、或いはmbについての質問のお問い合わせ。
   </li>
 </ul>
@@ -541,7 +541,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
 3. 出できた検査ボクスに提供されたsearch keyを輸入して「Enter」を押して下さい。
 <img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/searchbox.JPG"/><br/>
 4. 検索結果とその下のコードはあなたが探したい答えですよ！(つ´ω`)つ<br/>
-<a href="#contents">「コンテンツ概要」に戻る</a>
+<a href="#contents">「ドキュメント概要」に戻る</a>
 </p>
 <h2 id="communication">お問い合わせ</h2>
 <p>このゲームについての質問は、作者のメールアドレスに投稿ください。
@@ -549,3 +549,4 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
 <p>mbに質問、意見など、<a href="http://mb.cloud.nifty.com/faq.htm">こちら</a>に参考して下さい。
 <br/>或いは、<a href="https://github.com/NIFTYCloud-mbaas/UserCommunity">こちら</a>に投稿してください。
 </p>
+<a href="#contents">「ドキュメント概要」に戻る</a>
