@@ -7,12 +7,9 @@ using System.Collections.Generic;
 
 public class BestImageReader : MonoBehaviour {
 	public List<Image> images;
-	public int page = 0;
 	int imageCount = 0;
 	int nowImageIndex = -1;
-	public int maxCountInPage;
-	string pictureType;
-	public GameObject noText;
+	public int maxCount;
 	public Sprite transSprite;
 	// Use this for initialization
 	void Start () {
@@ -35,13 +32,12 @@ public class BestImageReader : MonoBehaviour {
 		query.WhereEqualTo ("type", "doodle");
 		query.OrderByDescending ("likes");
 		//取得件数の指定
-		query.Limit = maxCountInPage;
+		query.Limit = maxCount;
 		//取得開始位置の指定
 		query.FindAsync ((List<NCMBObject> objList ,NCMBException e) => {
 			if (e != null) {
 				//検索失敗時の処理
 			} else {
-				//Scoreが7のオブジェクトを出力
 				foreach (NCMBObject obj in objList) {
 					NextImageIndex();
 					loadOneImageTo(obj["filename"].ToString(), nowImageIndex);
@@ -71,7 +67,7 @@ public class BestImageReader : MonoBehaviour {
 
 	int NextImageIndex(){
 		nowImageIndex++;
-		if (nowImageIndex >= maxCountInPage) {
+		if (nowImageIndex >= maxCount) {
 			nowImageIndex = 0;
 		}
 		return nowImageIndex;
@@ -83,7 +79,7 @@ public class BestImageReader : MonoBehaviour {
 	}
 
 	void InitImages(){
-		for (int i = 0; i < maxCountInPage; i++) {
+		for (int i = 0; i < maxCount; i++) {
 			images [i].sprite = transSprite;
 		}
 	}
