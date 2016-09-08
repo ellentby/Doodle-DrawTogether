@@ -89,7 +89,7 @@
   	詳しくのは<a href="http://mb.cloud.nifty.com/doc/current/user/basic_usage_unity.html">ドキュメント</a>を参考下さい。
   	</p>
   </li>
-  <li><b>キーコード</b>
+  <li><b>主な流れ</b>
   <p>1. 先ずは、ニックネーム、パスワードを輸入するための「InputField」（UGUI Component）と登録、ログインのボタンを作ります。<br/>
   2.「ButtonContrller」と言うC#スクリプトを生成します。<br/>
   3. 「Scene」で「Controller」と言うGameobjectを生成して、「ButtonController」をGameobjectにつきます。
@@ -152,7 +152,7 @@
 　　　<br/>ですから、毎回新しい線を画きたいとき、スクリプトで新しいGameobjectが生成する。<br/>
       「LineRenderer」の関して、Unityの<a href="http://docs.unity3d.com/jp/current/ScriptReference/LineRenderer.html">ドキュメント</a>をご参考下さい。
   </li>
-  <li><b>キーコード</b><br/>
+  <li><b>主な流れ</b><br/>
 　1. 「DrawLine」と言うスクリプトを生成します。<br/>
 　2. 「DrawLine」で、「defaultRenderer」と言うLineRendererを定義し、設定します。
   <pre>
@@ -251,7 +251,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   	詳しくのは<a href="http://mb.cloud.nifty.com/doc/current/filestore/basic_usage_unity.html">ドキュメント</a>を参考下さい。
   	</p>
   </li>
-  <li><b>キーコード</b>
+  <li><b>主な流れ</b>
   <h5>Step 1 スクリーンショットに通して、画像をゲットする</h5>
   <p>このステップは、「SaveImage」スクリプトの「saveImage()」関数で行う。スクリーンショットをする範囲は、インプットされたGameobjectのエリアだけです。</p>
   <pre>
@@ -327,7 +327,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   	詳しくのは<a href="http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html">ドキュメント</a>を参考下さい。
   	</p>
   </li>
-  <li><b>キーコード</b>
+  <li><b>主な流れ</b>
   <p>
   	画像をクラウドに保存するだけではなく、画像に関するデーター（画像の名前、描いた人のニックネームなど）も保存する必要あります。それが、画像を検査する時の証拠になるますから。
   </p>
@@ -419,7 +419,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   	<img height="200px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/best0.png"/><br/>
   	</p>
    </li>
-  <li><b>キーコード</b>
+  <li><b>主な流れ</b>
   	<h5>Step 1 ハートのSpriteの定義と取得</h5>
   	Gameobjectの「Controller」に付ける「ThemeImageController」のスクリプトの中で、以下の変数を定義する。
 	<pre>
