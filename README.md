@@ -395,6 +395,16 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   	<p><a href="#q4">問題四</a>の「mbのデータストア機能について」部分をご覧ください。
   	</p>
   </li>
+  <li><b>ランキング機能の説明</b><br/>
+  	<p>
+  	「Doodle」のランキング機能は、Twitterと似て、作品を好きな人の数で決まります。落書き作品の右上のハートマークをクリックすると、ハート全体が赤くなって、「この作品に1票を投じました」を表示します。<br/>
+  	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/likee.png"/>
+  	<br/>
+  	一番人気な落書きは、ゲームの主要画面の左に表示されます。クリックすると、人気一位から四位までの落書き作品が見られます。
+  	<br/>
+  	<img height="200px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/best0.png"/><br/>
+  	</p>
+  </li>
   <li><b>キーコード</b>
 
   </li>
