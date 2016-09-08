@@ -397,16 +397,114 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
   </li>
   <li><b>ランキング機能の説明</b><br/>
   	<p>
-  	「Doodle」のランキング機能は、Twitterと似て、作品を好きな人の数で決まります。落書き作品の右上のハートマークをクリックすると、ハート全体が赤くなって、「この作品に1票を投じました」を表示します。<br/>
-  	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/likee.png"/>
+  	「Doodle」のランキング機能は、Twitterの「いいね」と似て、作品を好きな人の数で決まります。落書き作品の右上のハートマークをクリックすると、ハート全体が赤くなって、「この作品に1票を投じました」を表示します。<br/>
+  	<img height="200px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/likee.png"/>
+  	<br/>もし、赤くなったハートをもう一度クリックしたら、以上の動きを消します。
   	<br/>
   	一番人気な落書きは、ゲームの主要画面の左に表示されます。クリックすると、人気一位から四位までの落書き作品が見られます。
   	<br/>
   	<img height="200px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/best0.png"/><br/>
   	</p>
-  </li>
+   </li>
   <li><b>キーコード</b>
-
+  	<h5>Step 1 ハートのSpriteの定義と取得</h5>
+  	Gameobjectの「Controller」に付ける「ThemeImageController」のスクリプトの中で、以下の変数を定義する。
+	<pre>
+	//空きハートのSprite
+	public Sprite likeSprite;
+	//全体赤いハートのSprite
+	public Sprite likeClickedSprite;
+	</pre>
+  	<p>
+  	この二つのハートマークを定義し、UnityからSpriteファイルを取得する。<br/>
+  	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/likeU.JPG"/>
+  	</p>
+  	<h5>Step 2 ハートマークの切り替え、データの保存</h5>
+  	<p>ハートマークをクリックする時、更新すべきデータが二箇所あります。<br/>
+  	1. 「データストア」⇒　クラス「DoodleRecord」 ⇒　「likes」<br/>
+  	   &nbsp;&nbsp;&nbsp;&nbsp;ここでは、落書きのデータが保存しています。
+  	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/like-.JPG"/>
+  	2.  「データストア」⇒ 　クラス「LikeRecord」⇒　新規記録<br/>
+  	&nbsp;&nbsp;&nbsp;&nbsp;ここでは、投票記録が保存しています。<br/>
+	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/lirc.JPG"/>
+  	<br><br/>
+	ハートマークをクリックするアクションは、LightUpLike(INDEX)関数で処理します。インプットされた「index」は、
+	シーンの中のハートマークの番号です。
+	<br/><br/>関数LightUpLike():
+	</p>
+  	<pre>
+  	public void LightUpLike(int index){
+  		//まだクリックしてない場合
+		if (this.likes [index].sprite == likeSprite) {
+			//ハートマークを切り替え
+			this.likes [index].sprite = likeClickedSprite;
+			//好きな人数を取得
+			int likeCount = int.Parse(imageData[index]["likes"].ToString());
+			//人数を更新し
+  			likeCount++;
+  			imageData[index]["likes"] = likeCount;
+			//「誰がどれを好き」の記録を保存する
+			SaveLikeData (NCMBUser.CurrentUser.ObjectId,  imageData[index]["filename"].ToString());
+		//クリックした場合	
+		} else if (this.likes [index].sprite == likeClickedSprite) {
+			this.likes[index].sprite = likeSprite;
+			int likeCount = int.Parse(imageData[index]["likes"].ToString());
+			likeCount--;
+			imageData[index]["likes"] = likeCount;
+			//「誰がどれを好き」の記録を消す
+			DeleteLikeData (NCMBUser.CurrentUser.ObjectId, imageData[index]["filename"].ToString());
+		}
+		//好きな人数を更新する
+		imageData[index].SaveAsync ((NCMBException e2) => {      
+			if (e2 != null) {
+			//エラー処理
+			} else {
+			//成功時の処理
+			}                   
+		});
+	}
+	</pre>
+	<p>「LikeRecord」の新規生成：</p>
+	<pre>
+	void SaveLikeData(string user, string doodle){
+		NCMBObject obj = new NCMBObject ("LikeRecord");
+		obj.Add ("doodle", doodle);
+		obj.Add ("user", user);
+		obj.Save ((NCMBException e) => {      
+			if (e != null) {
+				Debug.Log("save like data error");
+			} else {
+				//成功時の処理
+			}                   
+		});
+	}
+	</pre>
+	<p>存在している「LikeRecord」を消す：</p>
+	<pre>
+	void DeleteLikeData(string user, string doodle){
+		//LikeRecordを検索するクラスを作成
+		NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("LikeRecord");
+		query.WhereEqualTo ("user", user);
+		query.WhereEqualTo ("doodle", doodle);
+		query.FindAsync ((List<NCMBObject> objList ,NCMBException e) => {
+			if (e != null) {
+				//検索失敗時の処理
+			} else {
+				//Scoreが7のオブジェクトを出力
+				foreach (NCMBObject obj in objList) {
+					Debug.Log ("delete objectId:" + obj.ObjectId);
+					obj.DeleteAsync ((NCMBException deleteError) => {
+						if (deleteError != null) {
+							//エラー処理
+						} else {
+							//成功時の処理
+						}
+					});
+				}
+			}
+		});
+	}
+  	</pre>
   </li>
   <li><b>ディスカッション</b>
   <br/>クラウドから画像を取得することも同じく簡単です！ ┃難易度★☆☆☆☆
