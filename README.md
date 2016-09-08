@@ -1,5 +1,7 @@
 # Doodle-DrawTogether
-同じテーマを基にして一緒に自分の落書き作品を作りましょ！
+
+<h3>同じテーマを基にして一緒に自分の落書き作品を作りましょ！</h3>
+「Doodle」では、ユーザーがテーマとしての簡単の線を書くことが出来る、そして、テーマを基にして、自分の落書き作品を書くことも出来ます。最も人気高い落書きは、本日ベストになります。
 <br/>
 <b>このゲームは、ニフティクラウドmobile backendのサンプルです。</b>
 <br/><br/>
@@ -7,48 +9,44 @@
 <img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/101.jpg"/>
 <img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/102.jpg"/>
 <img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/103.jpg"/>
-<h2 id="contents">コンテンツ概要</h2>
+<h2 id="contents">ドキュメント概要</h2>
 <ul>
-  <li><b>ニフティクラウドmobile backend（下記mb）の説明</b>
-    <ul>
-      <li>このゲームでは、mbの「会員管理」、「データストア」、「ファイルストア」の三つの機能を使っています。
-      	この三つの機能を、このドキュメントに説明します。
-      </li>
-    </ul>
+  <li><a href="#preparation"><h3>事前準備</h3></a>
+  この部分では、正式な開発が始まる前にする必要ある手順が説明されています。「Doodle」だけではなく、他のニフティクラウドmobile backend（下記mb）を利用したアプリ作りも、同じ手順を必要です。
+  </li>
+  <li><a href="#keyquestion"><h3>キー問題</h3></a>
+  キー問題は、「Doodle」の核としての５つの技術問題を提出し、解説するパートです。キー問題の解説は、以下の手順で行われます。
+  	<ul>
+  		<li><b>mbの機能について解説</b><br/>
+  		「Doodle」では、mbの「会員管理」、「データストア」、「ファイルストア」の三つの機能を使っています。 問題に対応するmbの機能を紹介します。<br/>
+  			<img width="400px"src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/3functions.jpg"/>
+  		</li>
+  		 <li><b>ゲーム機能の説明</b><br/>
+		    問題に対応しているゲームの機能を紹介する。
+		  </li>
+		  <li><b>主な流れ</b><br/>
+		  機能を作成する手順。キーコードとそれに関するUnityの操作を紹介します。
+		  </li>
+		  <li><b>ディスカッション</b><br/>
+		  問題の解説を見て、御自身も試したいと思ったら、是非ディスカッションの問題をご覧ください！
+	  	　<br/>質問の答えは全部プロジェクトのコードにあります。答えを探す方法は<a href="#discussionanswer">こちら</a>。
+		  </li>
+		  <li><b>ヒント</b><br/>
+		  mbに関して注意すべきこと、Unityの便利な機能など、ヒントの部分で紹介されています。
+		  </li>
+  	</ul>
+  </li>
+  <li><a href="#discussionanswer"><h3>ディスカッションの答えを探す方法</h3></a>
+  	キー問題のディスカッションの部分で、質問を提出しましたが、その質問の答えを探す方法。
+  </li>
+  <li><a href="#communication"><h3>お問い合わせ</h3></a>
+  ゲーム、或いはmbについての質問のお問い合わせ。
   </li>
 </ul>
-<p><img width="400px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/3functions.jpg"/></p>
-<ul>
-  <li><b>ゲーム内容の説明</b>
-    <ul>
-      <li>このゲームでは、ユーザーがテーマとしての簡単の線を書くことが出来る、そして、テーマを基にして、自分の落書き作品を書くことも出来ます。最も人気高い落書きは、本日ベストになります。（簡単なランキング機能付）</li>
-      <li>以上のゲーム機能を、このドキュメントに説明します。 </li>
-    </ul>
-  </li>
-  <li><b>ディスカッションについて</b>
-	  <ul>
-	  	<li>このドキュメントに、技術を実践に応用するため、ディスカッション問題を提供しています。
-	  	コードを見ながら、是非御自身も試して下さい！</li>
-	  	<li>質問の答えは全部プロジェクトのコードにあります。答えを探す方法は<a href="#discussionanswer">こちら</a>。</li>
-	  </ul>
-  </li>
-  <li><b>開発者として、mbの便利さを利用しながら、
-  <br/>ゲームプレーヤーとしての嬉しさも楽しもう！</b></li>
-</ul>
-<h2 id="keyquestion">キー問題</h2>
-<ul>
-  <li><a href="#q1">ユーザー登録とログイン（会員管理）</a>
-  ★☆☆☆☆</li>
-  <li><a href="#q2">落書きを描く機能</a>
-  ★★★★☆</li>
-  <li><a href="#q3">画像の保存と取得（ファイルストア）</a>
-  ★★☆☆☆</li>
-  <li><a href="#q4">画像に関するデーターの保存と取得（データストア）</a>
-  ★☆☆☆☆</li>
-  <li><a href="#q5">人気ランキング機能（データストア）</a>
-  ★★★☆☆</li>
-</ul>
-<h2>事前準備</h2>
+<h3>開発者として、mbの便利さを利用しながら、
+  <br/>ゲームプレーヤーとしての嬉しさも楽しもう！</h3>
+
+<h2 id="preparation">事前準備</h2>
 <ul>
   <li><b>開発環境</b>
     <ul>
@@ -69,6 +67,21 @@
       <li>SDKを<a href="http://mb.cloud.nifty.com/doc/current/introduction/quickstart_unity.html#APIキーの設定とSDKの初期化">初期化</a></a><b>（自分のAPI KeyとClient Keyを「NCMBSetting」に輸入して下さい）</b>
     </ul>
 </ul>
+
+<h2 id="keyquestion">キー問題</h2>
+<ul>
+  <li><a href="#q1">ユーザー登録とログイン（会員管理）</a>
+  ★☆☆☆☆</li>
+  <li><a href="#q2">落書きを描く機能</a>
+  ★★★★☆</li>
+  <li><a href="#q3">画像の保存と取得（ファイルストア）</a>
+  ★★☆☆☆</li>
+  <li><a href="#q4">画像に関するデーターの保存と取得（データストア）</a>
+  ★☆☆☆☆</li>
+  <li><a href="#q5">人気ランキング機能（データストア）</a>
+  ★★★☆☆</li>
+</ul>
+
 <h2 id="q1">『問題一』　ユーザー登録とログイン（会員管理）</h2>
 <h5>難易度/★☆☆☆☆</h5>
 <ul>
@@ -531,7 +544,7 @@ search key: Discussion 3 Set linerenderer's color and size<br/>
 4. 検索結果とその下のコードはあなたが探したい答えですよ！(つ´ω`)つ<br/>
 <a href="#contents">「コンテンツ概要」に戻る</a>
 </p>
-<h2>お問い合わせ</h2>
+<h2 id="communication">お問い合わせ</h2>
 <p>このゲームについての質問は、作者のメールアドレスに投稿ください。
 <br/>作者のメールアドレス：ellentby@163.com</p>
 <p>mbに質問、意見など、<a href="http://mb.cloud.nifty.com/faq.htm">こちら</a>に参考して下さい。
