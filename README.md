@@ -93,12 +93,17 @@
   	</p>
   </li>
   <li><b>説明対象</b><br/>
-  シーン「login」のGameobject「Name」（Inputfield）、「Password」（Inputfield）、「Login」（Button）、「SignUp」（Button）、Gameobject「Controller」Component「ButtonController」（Script）。
+  【シーン「login」】 <br/>
+  <b>「Name」</b>（Inputfield）、<br/>
+  <b>「Password」</b>（Inputfield）、<br/>
+  <b>「Login」</b>（Button）、<br/>
+  <b>「SignUp」</b>（Button）、<br/>
+  「Controller」Component<b>「ButtonController」</b>（Script）。
   </li>
   <li><b>主な流れ</b>
-  <p>1. 先ずは、ニックネーム、パスワードを輸入するための「InputField」（UGUI Component）と登録、ログインのボタンを作ります。<br/>
-  2.「ButtonContrller」と言うC#スクリプトを生成します。<br/>
-  3. シーンで「Controller」と言うGameobjectを生成して、「ButtonController」をGameobjectにつきます。
+  <p>1. 先ずは、ニックネーム、パスワードを輸入するためのGameobject「Name」と「Password」を生成。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/01login.gif">展示GIFを見る</a>）<br/>
+  2. 登録、ログインのボタンを生成。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/02loginbuttons.gif">展示GIFを見る</a>）<br/>
+  3. シーンで「Controller」と言うGameobjectを生成して、「ButtonController」をGameobjectにつきます。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/03ButtonController.gif">展示GIFを見る</a>）
   </p>
   「ButtonController」の中は、ボタンのクリックイベントを処理するためのコードです。<br/>
   登録ボタンを処理するコードは以下：
@@ -126,9 +131,9 @@
   </pre>
   4. ユニティーに戻って、「登録」ボタンをクリックする。ボタンのOnClick関数の所に、「＋」マックをクリックして下さい。
 　<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/redhi.jpg"/></p>
-  5. 「Controller」を下にドラッグし、OnSignUp()ファンクションを選択します。
+  5. 「Controller」を下にドラッグし、OnSignUp()ファンクションを選択します。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/04SignUpClick.gif">4.と5.の展示GIFを見る</a>）
   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/onclick.jpg"></p>
-   6. 「Controller」をクリックして、ニックネームとパスワードの入力ボックスを「nameInput」と「passwordInput」にドラッグします。
+   6. 「Controller」をクリックして、ニックネームとパスワードの入力ボックスを「nameInput」と「passwordInput」にドラッグします。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/05DragInputField.gif">展示GIFを見る</a>）
   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/conse.jpg"></p>
    以上は、登録効能の基本でした。
   </li>
@@ -158,6 +163,10 @@
 　　　<br/>ですから、毎回新しい線を画きたいとき、スクリプトで新しいGameobjectを生成する。<br/>
       「LineRenderer」の関して、Unityの<a href="http://docs.unity3d.com/jp/current/ScriptReference/LineRenderer.html">ドキュメント</a>をご参考下さい。
   </li>
+　<li><b>説明対象</b><br/>
+	【シーン「draw」】 <br/>
+	「Line0」Component「LineRenderer」、「DrawLine」(Script)
+  </li>
   <li><b>主な流れ</b><br/>
 　1. 「DrawLine」と言うスクリプトを生成します。<br/>
 　2. 「DrawLine」で、「defaultRenderer」と言うLineRendererを定義し、設定します。
@@ -169,7 +178,7 @@
    defaultRenderer.SetColors (Color.green, Color.green);
    defaultRenderer.useWorldSpace = true;
   </pre>
-　3. シーンで、「Line0」と言うGameobjectを生成します。「Add　Component」の所で、「LineRenderer」を生成します。<br/>
+　3. シーンで、「Line0」と言うGameobjectを生成します。「Add　Component」の所で、「LineRenderer」を生成します。「DrawLine」を「Line0」に付きます。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/06LineRenderer2.gif">展示GIFを見る</a>）<br/>
 　4. シーンで「DrawingPanel」と言うパネルを生成し、以下のコードに通し、スクリプトから獲得します。（この「DrawingPanel」は、スクリーンの上で絵を書くエリアです。）
   <pre>
   panel = GameObject.Find ("DrawingPanel");
@@ -258,6 +267,10 @@ search key: Discussion 3 Set linerenderer's color and size
   	詳しくのは<a href="http://mb.cloud.nifty.com/doc/current/filestore/basic_usage_unity.html">ドキュメント</a>を参考下さい。
   	</p>
   </li>
+  <li><b>説明対象</b><br/>
+  【シーン「draw」】<br/>
+  「Controller」Component「SaveImage」(Script)
+  </li>
   <li><b>主な流れ</b>
   <h5>Step 1 スクリーンショットに通して、画像をゲットする</h5>
   <p>このステップは、「SaveImage」スクリプトの「saveImage()」関数で行う。スクリーンショットをする範囲は、インプットされたGameobjectのエリアだけです。</p>
@@ -304,7 +317,7 @@ search key: Discussion 3 Set linerenderer's color and size
 	}
   </pre>
   <h5>Step 3 Unityの設定</h5>
-  <p>「SaveImage.cs」を「Drawing」シーンの中の「Controller」に付き、MainCameraを「Camera」の所にドラッグします。</p>
+  <p>「SaveImage.cs」を「Drawing」シーンの中の「Controller」に付き、MainCameraを「Camera」の所にドラッグします。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/07SaveImage.gif">展示GIFを見る</a>）</p>
   <img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/saimg.JPG"/>
   </li>
   <li><b>ディスカッション</b>
@@ -334,13 +347,19 @@ search key: Discussion 3 Set linerenderer's color and size
   	詳しくのは<a href="http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html">ドキュメント</a>を参考下さい。
   	</p>
   </li>
+   <li><b>説明対象</b><br/>
+  【シーン「draw」】データを保存する場合<br/>
+  「Controller」Component<b>「SaveImage」</b>(Script)
+  <br/>【シーン「doodles」】データを取得する場合<br/>
+  「Controller」Component「ThemeImageController」(Script)
+  </li>
   <li><b>主な流れ</b>
   <p>
   	画像をクラウドに保存するだけではなく、画像に関するデーター（画像の名前、描いた人のニックネームなど）も保存する必要もあります。それが、画像を検索する時の証拠になるますから。
   </p>
   <h5> データを保存する場合
   <p>
-  	mbのSDKに通して、簡単にデータを保存できます。
+  	「SaveImage」スクリプトの中で、mbのSDKに通して、簡単にデータを保存できます。
   </p>
   	<pre>
   	void saveImageData(string filename){
@@ -368,6 +387,7 @@ search key: Discussion 3 Set linerenderer's color and size
   <h5>データを取得する場合</h5>
   <p>
   	データーを取得する時、先ずは検索の条件を決まります。sqlと同じ、mbのSDKは、「NCMBQuery.WhereEqualTo(KEY,VALUE)」、「limit」、「skip」などの関数に通して、検索条件を指定できます。詳しくは<a href="http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html#基本的な検索の利用">ドキュメント</a>をご参考ください。
+  	<br/>「Doodle」では、落書きを展示する前に、名前に対応する画像のURLを見つけるため、画像のレコードを取得することが必要です。以下のコードは、シーン「doodles」のGameobject「Controller」のComponentの一つ「ThemeImageController」の中にあります。
   </p>
   <pre>
   	void loadImages(){
@@ -426,6 +446,10 @@ search key: Discussion 3 Set linerenderer's color and size
   	<img height="200px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/best0.png"/><br/>
   	</p>
    </li>
+   <li><b>説明対象</b><br/>
+    【シーン「doodles」】<br/>
+    「Controller」Component<b>「ThemeImageController」</b><br/>
+   </li>
   <li><b>主な流れ</b>
   	<h5>Step 1 ハートマークのSpriteの定義と取得</h5>
   	Gameobjectの「Controller」に付ける「ThemeImageController」のスクリプトの中で、以下の変数を定義する。
@@ -436,7 +460,7 @@ search key: Discussion 3 Set linerenderer's color and size
 	public Sprite likeClickedSprite;
 	</pre>
   	<p>
-  	この二つのハートマークを定義し、UnityからSpriteファイルを取得する。<br/>
+  	この二つのハートマークを定義し、UnityからSpriteファイルを取得する。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/08LikeSprite.gif">展示GIFを見る</a>）<br/>
   	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/likeU.JPG"/>
   	</p>
   	<h5>Step 2 ハートマークの切り替え、データの保存</h5>
@@ -448,7 +472,7 @@ search key: Discussion 3 Set linerenderer's color and size
   	&nbsp;&nbsp;&nbsp;&nbsp;ここでは、投票記録が保存しています。<br/>
 	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/lirc.JPG"/>
   	<br><br/>
-	ハートマークをクリックするアクションは、LightUpLike(INDEX)関数で処理します。インプットされた「index」は、
+	ハートマークをクリックするアクションは、「ThemeImageController」スクリプトのLightUpLike(INDEX)関数で処理します。インプットされた「index」は、
 	シーンの中のハートマークの番号です。
 	<br/><br/>関数LightUpLike():
 	</p>
@@ -542,8 +566,9 @@ search key: Discussion 3 Set linerenderer's color and size
 3. 出できた検査ボクスに提供されたsearch keyを輸入して「Enter」を押して下さい。
 <img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/searchbox.JPG"/><br/>
 4. 検索結果とその下のコードはあなたが探したい答えですよ！(つ´ω`)つ<br/>
-<a href="#contents">「ドキュメント概要」に戻る</a>
+<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/SearchAnswer.gif">展示GIFを見る</a>
 </p>
+<a href="#contents">「ドキュメント概要」に戻る</a>
 <h2 id="communication">お問い合わせ</h2>
 <p>このゲームについての質問は、作者のメールアドレスに投稿ください。
 <br/>作者のメールアドレス：ellentby@163.com</p>
