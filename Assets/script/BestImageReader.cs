@@ -25,7 +25,7 @@ public class BestImageReader : MonoBehaviour {
 		InitNowImageIndex ();
 		InitImages ();
 
-        //Discussion 6 Download LikeRecord
+        //Discussion 6 Like Ranking
         //DoodleRecordを検索するクラスを作成
         NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("DoodleRecord");
 
