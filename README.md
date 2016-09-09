@@ -15,14 +15,17 @@
   この部分で、正式な開発が始まる前に必要された手順を説明します。「Doodle」だけではなく、他のニフティクラウドmobile backend（下記mb）を利用したアプリ作りも、同じ手順が必要です。
   </li>
   <li><h3><a href="#keyquestion">キー問題</a></h3>
-  キー問題は、「Doodle」の核としての５つの技術問題を提出し、解説するパートです。キー問題の解説は、以下の手順で行われます。
+  キー問題は、「Doodle」の核としての５つの機能を提出し、解説するパートです。キー問題の解説は、以下の手順で行われます。
   	<ul>
   		<li><b>mbの機能について解説</b><br/>
   		「Doodle」では、mbの「会員管理」、「データストア」、「ファイルストア」の三つの機能を使っています。 問題に対応するmbの機能を紹介します。<br/>
   			<img width="400px"src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/3functions.jpg"/>
   		</li>
-  		 <li><b>ゲーム機能の説明</b><br/>
+  		　<li><b>ゲーム機能の説明</b><br/>
 		    問題に対応するゲームの機能を紹介します。
+		  </li>
+		  <li><b>説明対象</b><br/>
+		    以下の「主な流れ」で説明する流れに拘るGameobject（スクリプト、ボタンなど）
 		  </li>
 		  <li><b>主な流れ</b><br/>
 		  機能を作成する手順。キーコードとそれに関するUnityの操作を紹介します。
@@ -75,7 +78,7 @@
   ★★★★☆</li>
   <li><a href="#q3">画像の保存と取得（ファイルストア）</a>
   ★★☆☆☆</li>
-  <li><a href="#q4">画像に関するデーターの保存と取得（データストア）</a>
+  <li><a href="#q4">画像に関するデータの保存と取得（データストア）</a>
   ★☆☆☆☆</li>
   <li><a href="#q5">人気ランキング機能（データストア）</a>
   ★★★☆☆</li>
@@ -88,6 +91,9 @@
   	<p>ニフティクラウドmobile backendが提供する機能の一つ。アプリ利用者に会員登録を意識させない形で会員管理を行えます。
   	詳しくのは<a href="http://mb.cloud.nifty.com/doc/current/user/basic_usage_unity.html">ドキュメント</a>を参考下さい。
   	</p>
+  </li>
+  <li><b>説明対象</b><br/>
+  シーン「login」のGameobject「Name」（Inputfield）、「Password」（Inputfield）、「Login」（Button）、「SignUp」（Button）、Gameobject「Controller」Component「ButtonController」（Script）。
   </li>
   <li><b>主な流れ</b>
   <p>1. 先ずは、ニックネーム、パスワードを輸入するための「InputField」（UGUI Component）と登録、ログインのボタンを作ります。<br/>
@@ -235,7 +241,7 @@
   複数の線を画く方法を紹介しましだが、もし、一本の線だけ描きたい場合、<a href="http://qiita.com/kwst/items/ad61e72562a8bcd9a9f7">こちら</a>をご参考下さい。
  </li>
   <li><b>ディスカッション</b><br/>
-  線の色や、ブラッシュのサイズを変えてみますか？┃難易度★★★☆☆
+  ブラッシュの色とサイズを変えてみますか？┃難易度★★★☆☆
   <br/><b>【アンサー】</b>
 　</br><a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/DrawLine.cs">答え</a>　
 search key: Discussion 3 Set linerenderer's color and size
@@ -303,7 +309,7 @@ search key: Discussion 3 Set linerenderer's color and size
   </li>
   <li><b>ディスカッション</b>
   <br/>クラウドから画像を取得することも同じく簡単です！ ┃難易度★☆☆☆☆
-  <br/>クラウドから画像を取得した画像のタイプはbyte[]ですが、どうやってUnityに使えますか？ ┃難易度★★☆☆☆
+  <br/>クラウドから取得した画像のタイプはbyte[]ですが、どうやってUnityに使えますか？ ┃難易度★★☆☆☆
   <br/><b>【アンサー】</b></br>
   <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ThemeImageController.cs">画像取得の答え</a>
   search key: Discussion 4 Load from cloud<br/>
@@ -320,7 +326,7 @@ search key: Discussion 3 Set linerenderer's color and size
 <span><a href="#keyquestion">問題リストに戻る</a></span>
 
 
-<h2 id="q4">『問題四』　画像に関するデーターの保存と取得（データストア）</h2>
+<h2 id="q4">『問題四』　画像に関するデータの保存と取得（データストア）</h2>
 <h5>難易度/★☆☆☆☆</h5>
 <ul>
   <li><b>mbのデータストア機能について</b><br/>
@@ -520,10 +526,10 @@ search key: Discussion 3 Set linerenderer's color and size
   	</pre>
   </li>
   <li><b>ディスカッション</b>
-  <br/>ランキングを表示するため、LikeRecordをクラウドからダウンロードすることが必要ですが、その方法は？ ┃難易度★★☆☆☆
+  <br/>「DoodleRecord」の「likes」を利用したら、ランキングを作られるですが、それを試してみますか？難易度★★☆☆☆
   <br/><b>【アンサー】</b></br>
   <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/BestImageReader.cs">答え</a>
-  search key: Discussion 6 Download LikeRecord<br/>
+  search key: Discussion 6 Like Ranking<br/>
   <a href="#discussionanswer">答えを探す方法</a>
   </li>
 </ul>
