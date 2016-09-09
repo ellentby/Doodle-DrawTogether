@@ -6,7 +6,8 @@
 <b>このゲームは、ニフティクラウドmobile backendのサンプルです。</b>
 <br/><br/>
 <img width="600px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/001newTheme.jpg"/>
-<img width="600px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/002doodle.png"/>
+<br/>
+<img width="600px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/002doodl2.jpg"/>
 <h2 id="contents">ドキュメント概要</h2>
 <ul>
   <li><h3><a href="#preparation">事前準備</a></h3>
