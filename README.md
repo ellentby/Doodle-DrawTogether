@@ -165,7 +165,7 @@
   </li>
 　<li><b>説明対象</b><br/>
 	【シーン「draw」】 <br/>
-	「Line0」Component「LineRenderer」、「DrawLine」(Script)
+	「Line0」Component<b>「LineRenderer」</b>、<b>「DrawLine」</b>(Script)
   </li>
   <li><b>主な流れ</b><br/>
 　1. 「DrawLine」と言うスクリプトを生成します。<br/>
@@ -269,7 +269,7 @@ search key: Discussion 3 Set linerenderer's color and size
   </li>
   <li><b>説明対象</b><br/>
   【シーン「draw」】<br/>
-  「Controller」Component「SaveImage」(Script)
+  「Controller」Component<b>「SaveImage」</b>(Script)
   </li>
   <li><b>主な流れ</b>
   <h5>Step 1 スクリーンショットに通して、画像をゲットする</h5>
@@ -351,7 +351,7 @@ search key: Discussion 3 Set linerenderer's color and size
   【シーン「draw」】データを保存する場合<br/>
   「Controller」Component<b>「SaveImage」</b>(Script)
   <br/>【シーン「doodles」】データを取得する場合<br/>
-  「Controller」Component「ThemeImageController」(Script)
+  「Controller」Component<b>「ThemeImageController」</b>(Script)
   </li>
   <li><b>主な流れ</b>
   <p>
