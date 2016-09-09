@@ -566,7 +566,7 @@ search key: Discussion 3 Set linerenderer's color and size
 3. 出できた検査ボクスに提供されたsearch keyを輸入して「Enter」を押して下さい。
 <img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/searchbox.JPG"/><br/>
 4. 検索結果とその下のコードはあなたが探したい答えですよ！(つ´ω`)つ<br/>
-<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/SearchAnswer.gif">展示GIFを見る</a>
+<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/SearchAnswer2.gif">展示GIFを見る</a>
 </p>
 <a href="#contents">「ドキュメント概要」に戻る</a>
 <h2 id="communication">お問い合わせ</h2>
