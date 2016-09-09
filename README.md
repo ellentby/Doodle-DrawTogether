@@ -5,9 +5,26 @@
 <br/>
 <b>このゲームは、ニフティクラウドmobile backendのサンプルです。</b>
 <br/><br/>
-<img width="600px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/001newTheme.jpg"/>
-<br/>
-<img width="600px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/002doodl2.jpg"/>
+<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/001newThem2.jpg"/>
+<br/><br/><br/>
+<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/002doodl3.jpg"/>
+<br/><br/><br/>
+<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/003rank.jpg"/>
+<h2 id="contents">このドキュメントの目的</h2>
+<ul>
+	<li>ニフティクラウドmobile backendの魅力を見せる！
+	<ul>
+		<li>簡単なコードで自分の素敵なゲーム作品を作れる！</li>
+		<li>一緒に、面白いゲームの世界を作りましょ！(๑˃̵ᴗ˂̵)و</li>
+	</ul>
+	</li>
+	<li>技術説明
+	<ul>
+		<li>このゲームの中心機能の作り方を説明する</li>
+		<li>この説明を消化して、あなた自身の作品に使いましょ！</li>
+	</ul>
+	</li>
+</ul>
 <h2 id="contents">ドキュメント概要</h2>
 <ul>
   <li><h3><a href="#preparation">事前準備</a></h3>
