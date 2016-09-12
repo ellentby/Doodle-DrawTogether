@@ -1,15 +1,59 @@
 # Doodle-DrawTogether
 
-<h3>同じテーマを基にして一緒に自分の落書き作品を作りましょ！</h3>
-「Doodle」では、ユーザーがテーマとしての簡単の線を書くことが出来る、そして、テーマを基にして、自分の落書き作品を書くことも出来ます。最も人気高い落書きは、本日ベストになります。
+<h3>想像力に挑戦を起こす！<br/>同じテーマを基にして、一緒に落書き作品を描きましょ！</h3>
+<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/logo-bg.png"/><br/>
+<img width = "700px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/sum2.png"/>
 <br/>
-<b>このゲームは、ニフティクラウドmobile backendのサンプルです。</b>
+<b>*このゲームは、ニフティクラウドmobile backend（下記mb）のサンプルです。</b>
 <br/><br/>
+<h2 id="sequence">手順</h2>
+<h4>「STEP 1」 ソースコードの<a href="https://github.com/ellentby/Doodle-DrawTogether/archive/master.zip">ダウンロード</a></h4>
+<h4>「STEP 2」 ニフティクラウドmobile backendのID登録とログイン→アプリ作成</h4>
+<ul>
+	<li>ID登録は<a href="https://signup.nifty.com/users/cgi-bin/msignup_cloud.cgi?_ga=1.95611612.1385299947.1471829573">こちら</a>。</li>
+	<li>登録ができたらログインをすると下図のように「アプリの新規作成」画面が出るのでアプリを作成します。</li>
+</ul>
+<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/0033.png"/></p>
+<ul>
+	<li>以下の２種類のAPIキー（アプリケーションキーとクライアントキー）は次のステップで使います。</li>
+</ul>
+<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/004.png"/></p>
+<h4>「STEP 3」 Unityでアプリを起動</h4>
+<ul>
+	<li>ダウンロードしたフォルダを解凍し、Unityから開いてください。その後、loginシーンを開いてください。</li>
+</ul>
+<h4>「STEP 4」 APIキーの設定</h4>
+<ul>
+	<li>loginシーンのNCMBSettingsを編集します。</li>
+	<li>先程ニフティクラウドmobile backendのダッシュボード上で確認したAPIキーを貼り付けます。</li>
+</ul>
+<p>
+	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/005.JPG"/>
+</p>
+<h4>「STEP 5」 セーブし、再生して、ゲームを楽しもう！</h4>
+<p>
+	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/01.PNG"/>
+</p>
+<ul>
+	<li>ニックネームとパスワードはmbのIDと違って、好きな名前とパスワードで大丈夫です。</li>
+	<li>ゲームの登録情報、提出した画像などは、あなたの<a href="https://console.mb.cloud.nifty.com/">mbダッシュボード</a>で見られます。</li>
+</ul>
+<br/>
+<h2>ゲームの遊び方法</h2>
+<ul>
+	<li>簡単な線を描いて、テーマとして提出。</li>
+</ul>
 <img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/001newThem2.jpg"/>
-<br/><br/><br/>
+<ul>
+	<li>テーマを基にして、落書き作品を描く。</li>
+</ul>
 <img width="700px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/002doodl5.jpg"/>
-<br/><br/><br/>
+<ul>
+	<li>他の作品見ながら、気に入った作品に投票。人気作品はランキングに入られる。。</li>
+</ul>
 <img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/003rank.jpg"/>
+
+
 <h2 id="contents">このドキュメントの目的</h2>
 <ul>
 	<li>ニフティクラウドmobile backendの魅力を見せる！
