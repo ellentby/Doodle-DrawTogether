@@ -13,6 +13,13 @@ public class BestImageReader : MonoBehaviour {
 	public Sprite transSprite;
 	// Use this for initialization
 	void Start () {
+        if(Application.loadedLevelName == "title")
+        {
+            maxCount = 1;
+        }else if(Application.loadedLevelName == "bestDoodle")
+        {
+            maxCount = 4;
+        }
 		loadImages ();
 	}
 
@@ -22,9 +29,11 @@ public class BestImageReader : MonoBehaviour {
 	}
 
 	void loadImages(){
+        
 		InitNowImageIndex ();
 		InitImages ();
 
+        //Discussion 6 Like Ranking
         //DoodleRecordを検索するクラスを作成
         NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("DoodleRecord");
 
@@ -39,6 +48,7 @@ public class BestImageReader : MonoBehaviour {
 				//検索失敗時の処理
 			} else {
 				foreach (NCMBObject obj in objList) {
+                    Debug.Log("--------------------------------------------------------------");
 					NextImageIndex();
 					loadOneImageTo(obj["filename"].ToString(), nowImageIndex);
 				}
@@ -51,7 +61,8 @@ public class BestImageReader : MonoBehaviour {
 		texture.LoadImage (b);
 		Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
 		images[index].sprite = sprite;
-		Resources.UnloadUnusedAssets(); //一定要清理游离资源。
+        Debug.Log("image "+index);
+		Resources.UnloadUnusedAssets();
 	}
 
 	void loadOneImageTo(string name, int index){
