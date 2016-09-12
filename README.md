@@ -24,15 +24,20 @@
 </ul>
 <h2 id="contents">ドキュメント概要</h2>
 <ul>
-  <li><h3><a href="#preparation">事前準備</a></h3>
-  この部分で、正式な開発が始まる前に必要された手順を説明します。「Doodle」だけではなく、他のニフティクラウドmobile backend（下記mb）を利用したアプリ作りも、同じ手順が必要です。
+　<li><h3><a href="#sequence">手順</a></h3>
+　コードをダウンロードして、簡単な手順でゲームを動かせる！
+　</li>
+　<li><h3><a href="#game">ゲームの遊び方</a></h3>
+　楽しくゲームを体験しましょ！
+　</li>
+  <li><h3><a href="#preparation">開発の事前準備</a></h3>
+  本場な開発が始まる前に必要された手順を説明します。「Doodle」だけではなく、他のニフティクラウドmobile backend（下記mb）を利用したアプリ作りも、同じ手順が必要です。
   </li>
-  <li><h3><a href="#keyquestion">キー問題</a></h3>
-  キー問題は、「Doodle」の核としての５つの機能を提出し、解説するパートです。キー問題の解説は、以下の手順で行われます。
+  <li><h3><a href="#keyquestion">機能解説</a></h3>
+  機能解説では、「Doodle」の核としての５つの機能を提出し、解説するパートです。解説は、以下の手順で行われます。
   	<ul>
-  		<li><b>mbの機能について解説</b><br/>
-  		「Doodle」では、mbの「会員管理」、「データストア」、「ファイルストア」の三つの機能を使っています。 問題に対応するmbの機能を紹介します。
-  		</li>
+  		 <li><b>mbの機能について解説</b><br/>
+  		「Doodle」では、mbの「会員管理」、「データストア」、「ファイルストア」の三つの機能を使っています。 問題に対応するmbの機能を紹介します。</li>
   		　<li><b>ゲーム機能の説明</b><br/>
 		    問題に対応するゲームの機能を紹介します。
 		  </li>
@@ -59,6 +64,21 @@
   </li>
 </ul>
 <h3>開発者として、mbの便利さを利用しながら、ゲームプレーヤーとしての嬉しさも楽しもう！</h3>
+
+<h2 id="game">ゲームの遊び方</h2>
+<ul>
+	<li>簡単な線を描いて、テーマとして提出。</li>
+</ul>
+<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/001newThem2.jpg"/>
+<ul>
+	<li>テーマを基にして、落書き作品を描く。</li>
+</ul>
+<img width="700px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/002doodl5.jpg"/>
+<ul>
+	<li>他の作品見ながら、気に入った作品に投票。人気作品はランキングに入られる。。</li>
+</ul>
+<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/003rank.jpg"/>
+
 
 <h2 id="sequence">手順</h2>
 <h4>「STEP 1」 ソースコードの<a href="https://github.com/ellentby/Doodle-DrawTogether/archive/master.zip">ダウンロード</a></h4>
@@ -93,22 +113,6 @@
 	<li>ゲームの登録情報、提出した画像などは、あなたの<a href="https://console.mb.cloud.nifty.com/">mbダッシュボード</a>で見られます。</li>
 </ul>
 <br/>
-<h2>ゲームの遊び方</h2>
-<ul>
-	<li>簡単な線を描いて、テーマとして提出。</li>
-</ul>
-<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/001newThem2.jpg"/>
-<ul>
-	<li>テーマを基にして、落書き作品を描く。</li>
-</ul>
-<img width="700px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/002doodl5.jpg"/>
-<ul>
-	<li>他の作品見ながら、気に入った作品に投票。人気作品はランキングに入られる。。</li>
-</ul>
-<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/003rank.jpg"/>
-
-
-
 
 <h2 id="preparation">事前準備</h2>
 <ul>
