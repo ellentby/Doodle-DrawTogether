@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/login.unity
+- path: Assets/doodles.unity
   isLoaded: 1
   isActive: 1
