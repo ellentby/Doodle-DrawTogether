@@ -120,7 +120,6 @@ public class ButtonController : MonoBehaviour {
 		Application.LoadLevel ("title");
 	}
 
-    //Discussion 2 Log Out
     public void OnQuitGame(){
         NCMBUser.LogOutAsync((NCMBException e) => {
             if (e != null)
@@ -138,7 +137,6 @@ public class ButtonController : MonoBehaviour {
 		GetComponent<ThemeImageController> ().SetPage (i);
 	}
 
-    //Discussion 1 Log In
 	public void OnLogin(){
         GameObject.Find("Notation").GetComponent<Text>().text = "";
         if (IfNamePasswordIsFilledIn ()) {
