@@ -1,15 +1,12 @@
 # Doodle-DrawTogether
 
-<h3>同じテーマを基にして一緒に自分の落書き作品を作りましょ！</h3>
-「Doodle」では、ユーザーがテーマとしての簡単の線を書くことが出来る、そして、テーマを基にして、自分の落書き作品を書くことも出来ます。最も人気高い落書きは、本日ベストになります。
+<h3>想像力に挑戦を起こす！<br/>同じテーマを基にして、一緒に落書き作品を描きましょ！</h3>
+<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/logo-bg.png"/><br/>
+<img width = "700px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/sum2.png"/>
 <br/>
-<b>このゲームは、ニフティクラウドmobile backendのサンプルです。</b>
+<b>*このゲームは、ニフティクラウドmobile backend（下記mb）のサンプルです。</b>（<a href="http://mb.cloud.nifty.com/about.htm">mobile backendとは？</a>）
 <br/><br/>
-<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/001newThem2.jpg"/>
-<br/><br/><br/>
-<img width="700px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/002doodl5.jpg"/>
-<br/><br/><br/>
-<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/003rank.jpg"/>
+
 <h2 id="contents">このドキュメントの目的</h2>
 <ul>
 	<li>ニフティクラウドmobile backendの魅力を見せる！
@@ -26,20 +23,19 @@
 	</li>
 </ul>
 <h2 id="contents">ドキュメント概要</h2>
-<ul>
-  <li><h3><a href="#preparation">事前準備</a></h3>
-  この部分で、正式な開発が始まる前に必要された手順を説明します。「Doodle」だけではなく、他のニフティクラウドmobile backend（下記mb）を利用したアプリ作りも、同じ手順が必要です。
+<ul><li><h3><a href="#sequence">手順</a></h3>
+　コードをダウンロードして、簡単な手順でゲームを動かせる！</li><li><h3><a href="#game">ゲームの遊び方</a></h3>
+　楽しくゲームを体験しましょ！</li>
+  <li><h3><a href="#preparation">開発の事前準備</a></h3>
+  本場な開発が始まる前に必要された手順を説明します。「Doodle」だけではなく、他のニフティクラウドmobile backend（下記mb）を利用したアプリ作りも、同じ手順が必要です。
   </li>
-  <li><h3><a href="#keyquestion">キー問題</a></h3>
-  キー問題は、「Doodle」の核としての５つの機能を提出し、解説するパートです。キー問題の解説は、以下の手順で行われます。
+  <li><h3><a href="#keyquestion">機能解説</a></h3>
+  機能解説では、「Doodle」の核としての５つの機能を提出し、解説するパートです。解説は、以下の手順で行われます。
   	<ul>
-  		<li><b>mbの機能について解説</b><br/>
-  		「Doodle」では、mbの「会員管理」、「データストア」、「ファイルストア」の三つの機能を使っています。 問題に対応するmbの機能を紹介します。<br/>
-  			<img width="400px"src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/3functions.jpg"/>
-  		</li>
-  		　<li><b>ゲーム機能の説明</b><br/>
-		    問題に対応するゲームの機能を紹介します。
-		  </li>
+  		 <li><b>mbの機能について解説</b><br/>
+  		「Doodle」では、mbの「会員管理」、「データストア」、「ファイルストア」の三つの機能を使っています。 問題に対応するmbの機能を紹介します。</li>
+  		<li><b>ゲーム機能の説明</b><br/>
+		    問題に対応するゲームの機能を紹介します。</li>
 		  <li><b>説明対象</b><br/>
 		    以下の「主な流れ」で説明する流れに拘るGameobject（スクリプト、ボタンなど）
 		  </li>
@@ -63,6 +59,54 @@
   </li>
 </ul>
 <h3>開発者として、mbの便利さを利用しながら、ゲームプレーヤーとしての嬉しさも楽しもう！</h3>
+<br/><br/>
+<h2 id="sequence">手順</h2>
+<h4>「STEP 1」 ソースコードの<a href="https://github.com/ellentby/Doodle-DrawTogether/archive/master.zip">ダウンロード</a></h4>
+<h4>「STEP 2」 ニフティクラウドmobile backendのID登録とログイン→アプリ作成</h4>
+<ul>
+	<li>ID登録は<a href="https://signup.nifty.com/users/cgi-bin/msignup_cloud.cgi?_ga=1.95611612.1385299947.1471829573">こちら</a>。</li>
+	<li>登録ができたらログインをすると下図のように「アプリの新規作成」画面が出るのでアプリを作成します。</li>
+</ul>
+<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/0033.png"/></p>
+<ul>
+	<li>以下の２種類のAPIキー（アプリケーションキーとクライアントキー）は次のステップで使います。</li>
+</ul>
+<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/004.png"/></p>
+<h4>「STEP 3」 Unityでアプリを起動</h4>
+<ul>
+	<li>ダウンロードしたフォルダを解凍し、Unityから開いてください。その後、loginシーンを開いてください。</li>
+</ul>
+<h4>「STEP 4」 APIキーの設定</h4>
+<ul>
+	<li>loginシーンのNCMBSettingsを編集します。</li>
+	<li>先程ニフティクラウドmobile backendのダッシュボード上で確認したAPIキーを貼り付けます。</li>
+</ul>
+<p>
+	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/005.JPG"/>
+</p>
+<h4>「STEP 5」 セーブし、再生して、ゲームを楽しもう！</h4>
+<p>
+	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/01.PNG"/>
+</p>
+<ul>
+	<li>ニックネームとパスワードはmbのIDと違って、好きな名前とパスワードで大丈夫です。</li>
+	<li>ゲームの登録情報、提出した画像などは、あなたの<a href="https://console.mb.cloud.nifty.com/">mbダッシュボード</a>で見られます。</li>
+</ul>
+<br/>
+
+<h2 id="game">ゲームの遊び方</h2>
+<ul>
+	<li>簡単な線を描いて、テーマとして提出。</li>
+</ul>
+<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/001newThem2.jpg"/>
+<ul>
+	<li>テーマを基にして、落書き作品を描く。</li>
+</ul>
+<img width="700px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/002doodl5.jpg"/>
+<ul>
+	<li>他の作品見ながら、気に入った作品に投票。人気作品はランキングに入られる。。</li>
+</ul>
+<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/003rank.jpg"/>
 
 <h2 id="preparation">事前準備</h2>
 <ul>
@@ -86,7 +130,7 @@
     </ul>
 </ul>
 
-<h2 id="keyquestion">キー問題</h2>
+<h2 id="keyquestion">機能解説</h2>
 <ul>
   <li><a href="#q1">ユーザー登録とログイン（会員管理）</a>
   ★☆☆☆☆</li>
@@ -100,7 +144,7 @@
   ★★★☆☆</li>
 </ul>
 
-<h2 id="q1">『問題一』　ユーザー登録とログイン（会員管理）</h2>
+<h2 id="q1">『機能一』　ユーザー登録とログイン（会員管理）</h2>
 <h5>難易度/★☆☆☆☆</h5>
 <ul>
   <li><b>mbの会員管理機能について</b><br/>
@@ -168,8 +212,8 @@
 　<br/>- ボタンにGameobjectをドラッグし、クリックイベントを処理する関数を選ぶ、と言うことはUnity専有の機能で、使い易いです。
   </li>
 </ul>
-<span><a href="#keyquestion">問題リストに戻る</a></span>
-<h2 id="q2">『問題二』　落書きを描く機能</h2>
+<span><a href="#keyquestion">リストに戻る</a></span>
+<h2 id="q2">『機能二』　落書きを描く機能</h2>
 <h5>難易度/★★★★☆</h5>
 <ul>
   <li>描く機能の説明<br/>
@@ -273,9 +317,9 @@ search key: Discussion 3 Set linerenderer's color and size
   <br/><a href="#discussionanswer">答えを探す方法</a>
 </li>
 </ul>
-<span><a href="#keyquestion">問題リストに戻る</a></span>
+<span><a href="#keyquestion">リストに戻る</a></span>
 
-<h2 id="q3">『問題三』　画像の保存と取得（ファイルストア）</h2>
+<h2 id="q3">『機能三』　画像の保存と取得（ファイルストア）</h2>
 <h5>難易度/★★☆☆☆</h5>
 <ul>
   <li><b>mbのファイルストア機能について</b><br/>
@@ -352,10 +396,10 @@ search key: Discussion 3 Set linerenderer's color and size
   「アプリ設定」⇒「データ-ファイルストア」の「HTTPSでの取得」を「有効」にしたら、ファイルの公開URLが取得できます。とても便利な機能です。
   </li>
 </ul>
-<span><a href="#keyquestion">問題リストに戻る</a></span>
+<span><a href="#keyquestion">リストに戻る</a></span>
 
 
-<h2 id="q4">『問題四』　画像に関するデータの保存と取得（データストア）</h2>
+<h2 id="q4">『機能四』　画像に関するデータの保存と取得（データストア）</h2>
 <h5>難易度/★☆☆☆☆</h5>
 <ul>
   <li><b>mbのデータストア機能について</b><br/>
@@ -441,10 +485,10 @@ search key: Discussion 3 Set linerenderer's color and size
   <br/>- データを保存する場合、NCMBObject.save()とNCMBObject.saveAsync()の二つの関数を使えられます。save()は同時処理で、saveAsync()は非同時処理ですが、どちらを使うのは状況次第です。
   </li>
 </ul>
-<span><a href="#keyquestion">問題リストに戻る</a></span>
+<span><a href="#keyquestion">リストに戻る</a></span>
 
 
-<h2 id="q5">『問題五』　人気ランキング機能（データストア）</h2>
+<h2 id="q5">『機能五』　人気ランキング機能（データストア）</h2>
 <h5>難易度/★★★☆☆</h5>
 <ul>
   <li><b>mbのデータストア機能について</b><br/>
@@ -573,7 +617,7 @@ search key: Discussion 3 Set linerenderer's color and size
   <a href="#discussionanswer">答えを探す方法</a>
   </li>
 </ul>
-<span><a href="#keyquestion">問題リストに戻る</a></span>
+<span><a href="#keyquestion">リストに戻る</a></span>
 
 
 <h2 id="discussionanswer">ディスカッションの答えを探す方法</h2>
