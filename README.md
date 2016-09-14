@@ -84,7 +84,7 @@
 	<li>先程ニフティクラウドmobile backendのダッシュボード上で確認したAPIキーを貼り付けます。</li>
 </ul>
 <p>
-	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/005.JPG"/>
+	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/apikey.png"/>
 </p>
 <h4>「STEP 5」 セーブし、再生して、ゲームを楽しもう！</h4>
 <p>
