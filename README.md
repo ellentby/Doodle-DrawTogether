@@ -73,7 +73,7 @@
 <ul>
 	<li>以下の２種類のAPIキー（アプリケーションキーとクライアントキー）は次のステップで使います。</li>
 </ul>
-<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/004.png"/></p>
+<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/apikey.png"/></p>
 <h4>「STEP 3」 Unityでアプリを起動</h4>
 <ul>
 	<li>ダウンロードしたフォルダを解凍し、Unityから開いてください。その後、loginシーンを開いてください。</li>
@@ -84,7 +84,7 @@
 	<li>先程ニフティクラウドmobile backendのダッシュボード上で確認したAPIキーを貼り付けます。</li>
 </ul>
 <p>
-	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/apikey.png"/>
+	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/005.JPG"/>
 </p>
 <h4>「STEP 5」 セーブし、再生して、ゲームを楽しもう！</h4>
 <p>
@@ -625,8 +625,7 @@ search key: Discussion 3 Set linerenderer's color and size
 <a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/SearchAnswer2.gif">展示GIFを見る</a>
 </p>
 <h2 id="communication">お問い合わせ</h2>
-<p>このゲームについての質問は、作者のメールアドレスに投稿ください。
-<br/>作者のメールアドレス：ellentby@163.com</p>
+<p>このゲームについての質問は、「issures」に投稿ください。</p>
 <p>mbに質問、意見など、<a href="http://mb.cloud.nifty.com/faq.htm">こちら</a>に参考して下さい。
 <br/>或いは、<a href="https://github.com/NIFTYCloud-mbaas/UserCommunity">こちら</a>に投稿してください。
 </p>
