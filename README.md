@@ -51,9 +51,6 @@
   <li><h3><a href="#discussionanswer">ディスカッションの答えを探す方法</a></h3>
   	キー問題のディスカッションの部分で、質問を提出しましたが、その質問の答えを探す方法。
   </li>
-  <li><h3><a href="#communication">お問い合わせ</a></h3>
-  ゲーム、或いはmbについての質問のお問い合わせ。
-  </li>
 </ul>
 <h3>開発者として、mbの便利さを利用しながら、ゲームプレーヤーとしての嬉しさも楽しもう！</h3>
 <br/><br/>
@@ -608,11 +605,14 @@ search key: Discussion 3 Set linerenderer's color and size
 4. 検索結果とその下のコードはあなたが探したい答えですよ！(つ´ω`)つ<br/>
 <a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/SearchAnswer2.gif">展示GIFを見る</a>
 </p>
-<a href="#contents">「ドキュメント概要」に戻る</a>
 <h2 id="communication">お問い合わせ</h2>
 <p>このゲームについての質問は、作者のメールアドレスに投稿ください。
 <br/>作者のメールアドレス：ellentby@163.com</p>
 <p>mbに質問、意見など、<a href="http://mb.cloud.nifty.com/faq.htm">こちら</a>に参考して下さい。
 <br/>或いは、<a href="https://github.com/NIFTYCloud-mbaas/UserCommunity">こちら</a>に投稿してください。
 </p>
+<h2 id="reference">参考</h2>
+<ul>
+	<li><a href="http://mb.cloud.nifty.com/doc/current/">mBaas ドキュメント</a></li>
+</ul>
 <a href="#contents">「ドキュメント概要」に戻る</a>
