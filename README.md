@@ -23,12 +23,9 @@
 	</li>
 </ul>
 <h2 id="contents">ドキュメント概要</h2>
-<ul><li><h3><a href="#sequence">手順</a></h3>
+<ul><li><h3><a href="#sequence">スタート手順</a></h3>
 　コードをダウンロードして、簡単な手順でゲームを動かせる！</li><li><h3><a href="#game">ゲームの遊び方</a></h3>
 　楽しくゲームを体験しましょ！</li>
-  <li><h3><a href="#preparation">開発の事前準備</a></h3>
-  本場な開発が始まる前に必要された手順を説明します。「Doodle」だけではなく、他のニフティクラウドmobile backend（下記mb）を利用したアプリ作りも、同じ手順が必要です。
-  </li>
   <li><h3><a href="#keyquestion">機能解説</a></h3>
   機能解説では、「Doodle」の核としての５つの機能を提出し、解説するパートです。解説は、以下の手順で行われます。
   	<ul>
@@ -60,7 +57,12 @@
 </ul>
 <h3>開発者として、mbの便利さを利用しながら、ゲームプレーヤーとしての嬉しさも楽しもう！</h3>
 <br/><br/>
-<h2 id="sequence">手順</h2>
+<h2 id="sequence">スタート手順</h2>
+<h4>「STEP 0」開発環境</h4>
+<ul>
+      <li>windows7以上、或いはOS X</li>
+      <li>Unity5.3.5以上</li>
+</ul>
 <h4>「STEP 1」 ソースコードの<a href="https://github.com/ellentby/Doodle-DrawTogether/archive/master.zip">ダウンロード</a></h4>
 <h4>「STEP 2」 ニフティクラウドmobile backendのID登録とログイン→アプリ作成</h4>
 <ul>
@@ -107,28 +109,6 @@
 	<li>他の作品見ながら、気に入った作品に投票。人気作品はランキングに入られる。。</li>
 </ul>
 <img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/003rank.jpg"/>
-
-<h2 id="preparation">事前準備</h2>
-<ul>
-  <li><b>開発環境</b>
-    <ul>
-      <li>windows7以上、或いはOS X</li>
-      <li>Unity5.3.5以上</li>
-    </ul>
-  </li>
-  <li><b>クラウド</b>
-    <ul>
-      <li>ニフティクラウドmobile backendの<a href="http://mb.cloud.nifty.com/signup.htm">アカウント</a>（無料）</li>
-      <li>mbのアカウントを使って、「Doodle」と言うアプリの<a href="http://mb.cloud.nifty.com/doc/current/introduction/quickstart_unity.html#アプリの新規作成">新規作成</a>（無料）</li>
-    </ul>
-  </li>
-  <li><b>新しいUnityプロジェクトを作成</b>
-    <ul>
-      <li>新しい2Dプロジェクトを作成する</li>
-      <li>mb SDKを<a href="http://mb.cloud.nifty.com/doc/current/introduction/quickstart_unity.html#SDKのダウンロード">インストール</a></li>
-      <li>SDKを<a href="http://mb.cloud.nifty.com/doc/current/introduction/quickstart_unity.html#APIキーの設定とSDKの初期化">初期化</a></a><b>（自分のAPI KeyとClient Keyを「NCMBSetting」に輸入して下さい）</b>
-    </ul>
-</ul>
 
 <h2 id="keyquestion">機能解説</h2>
 <ul>
