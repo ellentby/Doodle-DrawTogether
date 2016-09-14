@@ -144,7 +144,7 @@
   </p>
   「ButtonController」の中は、ボタンのクリックイベントを処理するためのコードです。<br/>
   登録ボタンを処理するコードは以下：
-  <pre>
+  <pre data-lang="c#">
 	public InputField nameInput;
 	public InputField passwordInput;
 	public void OnSignUp(){
