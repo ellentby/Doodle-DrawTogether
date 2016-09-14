@@ -105,7 +105,7 @@
 <ul>
 	<li>他の作品見ながら、気に入った作品に投票。人気作品はランキングに入られる。<br/>投票記録もダッシュボードで確認できます。</li>
 </ul>
-<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/003rank4.jpg"/>
+<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/003rank5.jpg"/>
 
 
 <h2 id="keyquestion">機能解説</h2>
