@@ -95,7 +95,7 @@
 
 <h2 id="game">ゲームの遊び方</h2>
 <ul>
-	<li>簡単な線を描いて、テーマとして提出する。画像はクラウドに保存され、ダッシュボードで確認できます。</li>
+	<li>簡単な線を描いて、テーマとして提出する。<br/>画像はクラウドに保存され、ダッシュボードで確認できます。</li>
 </ul>
 <img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/001newTheme3.jpg"/>
 <ul>
