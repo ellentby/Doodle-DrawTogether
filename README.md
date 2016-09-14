@@ -95,17 +95,17 @@
 
 <h2 id="game">ゲームの遊び方</h2>
 <ul>
-	<li>簡単な線を描いて、テーマとして提出。</li>
+	<li>簡単な線を描いて、テーマとして提出する。画像はクラウドに保存され、ダッシュボードで確認できます。</li>
 </ul>
-<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/001newThem2.jpg"/>
+<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/001newTheme3.jpg"/>
 <ul>
 	<li>テーマを基にして、落書き作品を描く。</li>
 </ul>
 <img width="700px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/002doodl5.jpg"/>
 <ul>
-	<li>他の作品見ながら、気に入った作品に投票。人気作品はランキングに入られる。。</li>
+	<li>他の作品見ながら、気に入った作品に投票。人気作品はランキングに入られる。<br/>投票記録もダッシュボードで確認できます。</li>
 </ul>
-<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/003rank.jpg"/>
+<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/003rank2.jpg"/>
 
 
 <h2 id="keyquestion">機能解説</h2>
