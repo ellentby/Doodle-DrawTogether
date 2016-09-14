@@ -107,6 +107,7 @@
 </ul>
 <img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/003rank.jpg"/>
 
+
 <h2 id="keyquestion">機能解説</h2>
 <ul>
   <li><a href="#q1">ユーザー登録とログイン（会員管理）</a>
@@ -173,6 +174,13 @@
    6. 「Controller」をクリックして、ニックネームとパスワードの入力ボックスを「nameInput」と「passwordInput」にドラッグします。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/05DragInputField.gif">展示GIFを見る</a>）
   <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/conse.jpg"></p>
    以上は、登録効能の基本でした。
+  </li>
+  <li><b>動作確認</b><br/>
+  	<ul>
+		<li>先ほど保存したユーザー情報はダッシュボード⇒データストアで見られます：<br/>
+			<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/login.png"/>
+		</li>
+	</ul>
   </li>
   <li><b>ディスカッション</b>
   <br/>ログインとログアウトの機能を挑戦しませんか？ ┃難易度★☆☆☆☆
@@ -357,6 +365,10 @@ search key: Discussion 3 Set linerenderer's color and size
   <p>「SaveImage.cs」を「Drawing」シーンの中の「Controller」に付き、MainCameraを「Camera」の所にドラッグします。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/07SaveImage.gif">展示GIFを見る</a>）</p>
   <img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/saimg.JPG"/>
   </li>
+  <li><b>動作確認</b><br/>
+  	先ほどクラウドに保存した落書きはダッシュボードのファイルストアに見られます：
+  	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/filestore.png"/>
+  </li>
   <li><b>ディスカッション</b>
   <br/>クラウドから画像を取得することも同じく簡単です！ ┃難易度★☆☆☆☆
   <br/>クラウドから取得した画像のタイプはbyte[]ですが、どうやってUnityに使えますか？ ┃難易度★★☆☆☆
@@ -458,6 +470,10 @@ search key: Discussion 3 Set linerenderer's color and size
 	}
   </pre>
   </li>
+  <li><b>動作確認</b><br/>
+  	先ほど保存した落書きに関するデータはダッシュボードのデータストアに見られます：
+  	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/doodlerc.png"/>
+  </li>
   <li><b>ヒント</b>
   <br/>- データを保存する場合、NCMBObject.save()とNCMBObject.saveAsync()の二つの関数を使えられます。save()は同時処理で、saveAsync()は非同時処理ですが、どちらを使うのは状況次第です。
   </li>
@@ -503,10 +519,10 @@ search key: Discussion 3 Set linerenderer's color and size
   	<h5>Step 2 ハートマークの切り替え、データの保存</h5>
   	<p>ハートマークをクリックする時、更新すべきデータが二箇所あります。<br/>
   	1. 「データストア」⇒　クラス「DoodleRecord」 ⇒　「likes」<br/>
-  	   &nbsp;&nbsp;&nbsp;&nbsp;ここでは、落書きのデータが保存しています。
+  	   &nbsp;&nbsp;&nbsp;&nbsp;ここでは、落書きのデータが保存されています。「likes」と言う列は、この落書きに気に入れた人数です。
   	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/like-.JPG"/>
   	2.  「データストア」⇒ 　クラス「LikeRecord」⇒　新規記録<br/>
-  	&nbsp;&nbsp;&nbsp;&nbsp;ここでは、投票記録が保存しています。<br/>
+  	&nbsp;&nbsp;&nbsp;&nbsp;ここでは、投票記録が保存されてしています。<br/>
 	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/lirc.JPG"/>
   	<br><br/>
 	ハートマークをクリックするアクションは、「ThemeImageController」スクリプトのLightUpLike(INDEX)関数で処理します。インプットされた「index」は、
