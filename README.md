@@ -1,621 +1,133 @@
-# Doodle-DrawTogether
+# 【Unity】想像力を目覚めさせる軽いゲームを作ろう！
+![画像1](readme-img/name.png)
+![画像2](readme-img/sum4.png)
 
-<h3>想像力に挑戦を起こす！<br/>同じテーマを基にして、一緒に落書き作品を描きましょ！</h3>
-<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/logo-bg.png"/><br/>
-<img width = "700px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/sum2.png"/>
+## 概要
+* [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の『ファイルストア機能』、『会員管理機能』、『データストア機能』を利用してUnityのサンプルプゲームプロジェクトです
+* 簡単な操作ですぐに [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の機能を体験いただけます★★
+
+## ニフティクラウドmobile backendって何？？
+スマートフォンアプリのバックエンド機能（プッシュ通知・データストア・会員管理・ファイルストア・SNS連携・位置情報検索・スクリプト）が**開発不要**、しかも基本**無料**(注1)で使えるクラウドサービス！今回はデータストアを体験します
+
+注1：詳しくは[こちら](http://mb.cloud.nifty.com/price.htm)をご覧ください
+
+![画像2](https://github.com/natsumo/SwiftLoginApp/blob/master/readme-img/002.png)
+
+## 動作環境
+* windows7以上、或いはOS X
+* Unity5.3.5以上
+
+※上記内容で動作確認をしています。
+
+
+## 手順
+###『STEP 1』準備＆アプリ起動
+### 1. [ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)の会員登録とログイン→アプリ作成
+
+* 上記リンクから会員登録（無料）をします。登録ができたらログインをすると下図のように「アプリの新規作成」画面が出るのでアプリを作成します
+
+![画像3](readme-img/register.png)
+
+* アプリ作成されると下図のような画面になります
+* この２種類のAPIキー（アプリケーションキーとクライアントキー）は次のステップで使用します。 
+
+![画像4](https://github.com/natsumo/SwiftLoginApp/blob/master/readme-img/004.png)
+
+### 2. GitHubからサンプルプロジェクトの<a href="https://github.com/ellentby/Doodle-DrawTogether/archive/master.zip">ダウンロード</a>
+
+* 上記のリンクをクリックして、プロジェクトをダウンロード下さい。
+
+### 3. Unityでアプリを起動
+
+* ダウンロードしたフォルダを解凍し、Unityから開いてください。その後、loginシーンを開いてください。
+
+
+### 4. APIキーの設定
+
+* loginシーンの`NCMBSettings`を編集します
+* 先程[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のダッシュボード上で確認したAPIキーを貼り付けます
+
+![画像07](https://github.com/hounenhounen/UnityLoginApp/blob/master/readme-img/ApiKey.png)
+
+
+* シーンを保存して下さい。
+
+### 5. アプリ再生
+* Unity画面で上部真ん中の実行ボタン（さんかくの再生マーク）をクリックしして、ゲームを体験しましょう！
+
+<img src="readme-img/start.png" width=600px>
+
 <br/>
-<b>*このゲームは、ニフティクラウドmobile backend（下記mb）のサンプルです。</b>（<a href="http://mb.cloud.nifty.com/about.htm">mobile backendとは？</a>）
-<br/><br/>
+###『STEP 2』ゲームの動作確認
+###①　アカウント登録
+* 自分が好きなニックネームとパスワードを入力し、「Sign Up」ボタンをクリックして下さい。（2回目以降は`your name`と`your password`を入力してLog Inボタンをタップします）
 
-<h2 id="contents">ドキュメント概要</h2>
-<ul><li><h3><a href="#sequence">スタート手順</a></h3>
-　コードをダウンロードして、簡単な手順でゲームを動かせる！</li><li><h3><a href="#game">ゲームの遊び方</a></h3>
-　楽しくゲームを体験しましょ！</li>
-  <li><h3><a href="#keyquestion">機能解説</a></h3>
-  機能解説では、「Doodle」の核としての５つの機能を提出し、解説するパートです。解説は、以下の手順で行われます。
-  	<ul>
-  		 <li><b>mbの機能について解説</b><br/>
-  		「Doodle」では、mbの「会員管理」、「データストア」、「ファイルストア」の三つの機能を使っています。 問題に対応するmbの機能を紹介します。</li>
-  		<li><b>ゲーム機能の説明</b><br/>
-		    問題に対応するゲームの機能を紹介します。</li>
-		  <li><b>説明対象</b><br/>
-		    以下の「主な流れ」で説明する流れに拘るGameobject（スクリプト、ボタンなど）
-		  </li>
-		  <li><b>主な流れ</b><br/>
-		  機能を作成する手順。キーコードとそれに関するUnityの操作を紹介します。
-		  </li>
-		  <li><b>動作確認</b><br/>
-		  操作の結果を、ダッシュボードで確認します。
-		  </li>
-		  <li><b>ディスカッション</b><br/>
-		  問題の解説を見て、御自身も試したいと思ったら、是非ディスカッションの問題をご覧ください！
-	  	　<br/>質問の答えは全部プロジェクトのコードにあります。答えを探す方法は<a href="#discussionanswer">こちら</a>。
-		  </li>
-		  <li><b>ヒント</b><br/>
-		  mbに関して注意すべきこと、Unityの便利な機能など、ヒントの部分で紹介されています。
-		  </li>
-  	</ul>
-  </li>
-  <li><h3><a href="#discussionanswer">ディスカッションの答えを探す方法</a></h3>
-  	キー問題のディスカッションの部分で、質問を提出しましたが、その質問の答えを探す方法。
-  </li>
-</ul>
-<h3>開発者として、mbの便利さを利用しながら、ゲームプレーヤーとしての嬉しさも楽しもう！</h3>
-<br/><br/>
-<h2 id="sequence">スタート手順</h2>
-<h4>「STEP 0」開発環境</h4>
-<ul>
-      <li>windows7以上、或いはOS X</li>
-      <li>Unity5.3.5以上</li>
-</ul>
-<h4>「STEP 1」 ソースコードの<a href="https://github.com/ellentby/Doodle-DrawTogether/archive/master.zip">ダウンロード</a></h4>
-<h4>「STEP 2」 ニフティクラウドmobile backendのID登録とログイン→アプリ作成</h4>
-<ul>
-	<li>ID登録は<a href="https://signup.nifty.com/users/cgi-bin/msignup_cloud.cgi?_ga=1.95611612.1385299947.1471829573">こちら</a>。</li>
-	<li>登録ができたらログインをすると下図のように「アプリの新規作成」画面が出るのでアプリを作成します。</li>
-</ul>
-<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/0033.png"/></p>
-<ul>
-	<li>以下の２種類のAPIキー（アプリケーションキーとクライアントキー）は次のステップで使います。</li>
-</ul>
-<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/apikey.png"/></p>
-<h4>「STEP 3」 Unityでアプリを起動</h4>
-<ul>
-	<li>ダウンロードしたフォルダを解凍し、Unityから開いてください。その後、loginシーンを開いてください。</li>
-</ul>
-<h4>「STEP 4」 APIキーの設定</h4>
-<ul>
-	<li>loginシーンのNCMBSettingsを編集します。</li>
-	<li>先程ニフティクラウドmobile backendのダッシュボード上で確認したAPIキーを貼り付けます。</li>
-</ul>
-<p>
-	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/005.JPG"/>
-</p>
-<h4>「STEP 5」 セーブし、再生して、ゲームを楽しもう！</h4>
-<p>
-	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/01.PNG"/>
-</p>
-<ul>
-	<li>ニックネームとパスワードはmbのIDと違って、好きな名前とパスワードで大丈夫です。</li>
-	<li>ゲームの登録情報、提出した画像などは、あなたの<a href="https://console.mb.cloud.nifty.com/">mbダッシュボード</a>で見られます。</li>
-</ul>
-<br/>
+<img src="readme-img/register-button.png" width=450px>
 
-<h2 id="game">ゲームの遊び方</h2>
-<ul>
-	<li>簡単な線を描いて、テーマとして提出する。<br/>画像はクラウドに保存され、ダッシュボードで確認できます。</li>
-</ul>
-<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/001newTheme3.jpg"/>
-<ul>
-	<li>テーマを基にして、落書き作品を描く。</li>
-</ul>
-<img width="700px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/002doodl5.jpg"/>
-<ul>
-	<li>他の作品見ながら、気に入った作品に投票。人気作品はランキングに入られる。<br/>投票記録もダッシュボードで確認できます。</li>
-</ul>
-<img width="800px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/003rank5.jpg"/>
+ * 次の画面が出てきたら、登録成功です。
 
+<img src="readme-img/loginsuccess.png" width=600px>
 
-<h2 id="keyquestion">機能解説</h2>
+---------
+* ダッシュボードで動作確認しましょう！
+  1. ニフティクラウドmobile backendの<a href="https://console.mb.cloud.nifty.com">ダッシュボード</a>で、左の「会員管理」をクリックして下さい。
+  2. 先ほど作成したアカウントを確認しましょう。
+![画像14](readme-img/checkregister.png)
+
+###②　テーマとDoodleの保存
+* 「New Theme」ボタンをクリックし、簡単な絵を描きましょう。ここで描いた絵は、テーマとして、Doodle（落書き）の基礎になります。
+* 描き終わったら、「submit」ボタンをクリックして保存して下さい。
+
+![画像14](readme-img/newtheme.png)
+
+* テーマを保存したら、Doodleを描きましょう！
+ 1. メイン画面の「Today's Theme」ボタンをクリックして、次の画面で、先に描いたテーマを選択して下さい。
+ 2. 「Draw my doodle」をクリックし、先に描いたテーマを基にして、Doodleを描きましょう！
+ 3. 描き終わったら、「Submit」ボタンをクリックして保存して下さい。
+
+![画像14](readme-img/newdoodle.png)
+
+* 保存したDoodleは、次の画面で確認できます。 
+
+<img src="readme-img/doodle.png" width="600px"/>
+
+--------
+
+* 描いたテーマとDoodlleを<a href="https://console.mb.cloud.nifty.com">ダッシュボード</a>で確認しましょう！
+  1. ダッシュボードの左にある「ファイルストア」をクリックして下さい。
+  2. 保存したテーマとDoodleのファイルは画面の右で確認できます。
+  
+![画像14](readme-img/checkfile.png)
+
+-----
+
+* ファイルストアには、画像ファイルのみが保存されます。絵の作者やタイプ（Doodleかテーマか）などの情報を一緒に管理するにはデータストアを利用します。
+  - このアプリでは「DoodleRecord」というクラスをデータストアに作成し管理しています。
+* データストアも確認しましょう！
+  1. <a href="https://console.mb.cloud.nifty.com">ダッシュボード</a>で、左側の「データストア」をクリックし、「DoodleRecord」というクラスをクリックして下さい。
+  2. 右の画面で、先に保存しましたなテーマとDoodleのレコードを確認できます。
+![画像14](readme-img/checkdata.png)
+
+##機能解説
+ユーザー登録と画像データの保存、絵を描く、ランキング機能などの具体的な解説は<a href="https://github.com/ellentby/Doodle-DrawTogether/blob/master/%E6%A9%9F%E8%83%BD%E8%A7%A3%E8%AA%AC.md">機能解説ドキュメント</a>の方をご参照下さい：
+
 <ul>
-  <li><a href="#q1">ユーザー登録とログイン（会員管理）</a>
+  <li><a href="機能解説.md#q1">『機能一』ユーザー登録とログイン（会員管理）</a>
   ★☆☆☆☆</li>
-  <li><a href="#q2">落書きを描く機能</a>
+  <li><a href="機能解説.md#q2">『機能二』落書き機能</a>
   ★★★★☆</li>
-  <li><a href="#q3">画像の保存と取得（ファイルストア）</a>
+  <li><a href="機能解説.md#q3">『機能三』画像の保存と取得（ファイルストア）</a>
   ★★☆☆☆</li>
-  <li><a href="#q4">画像に関するデータの保存と取得（データストア）</a>
+  <li><a href="機能解説.md#q4">『機能四』画像に関するデータの保存と取得（データストア）</a>
   ★☆☆☆☆</li>
-  <li><a href="#q5">人気ランキング機能（データストア）</a>
+  <li><a href="機能解説.md#q5">『機能五』人気ランキング機能（データストア）</a>
   ★★★☆☆</li>
 </ul>
 
-<h2 id="q1">『機能一』　ユーザー登録とログイン（会員管理）</h2>
-<h5>難易度/★☆☆☆☆</h5>
-<ul>
-  <li><b>mbの会員管理機能について</b><br/>
-  	<p>ニフティクラウドmobile backendが提供する機能の一つ。アプリ利用者に会員登録を意識させない形で会員管理を行えます。
-  	詳しくのは<a href="http://mb.cloud.nifty.com/doc/current/user/basic_usage_unity.html">ドキュメント</a>を参考下さい。
-  	</p>
-  </li>
-  <li><b>説明対象</b><br/>
-  【シーン「login」】 <br/>
-  <b>「Name」</b>（Inputfield）、<br/>
-  <b>「Password」</b>（Inputfield）、<br/>
-  <b>「Login」</b>（Button）、<br/>
-  <b>「SignUp」</b>（Button）、<br/>
-  「Controller」Component<b>「ButtonController」</b>（Script）。
-  </li>
-  <li><b>主な流れ</b>
-  <p>1. 先ずは、ニックネーム、パスワードを輸入するためのGameobject「Name」と「Password」を生成。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/01login.gif">展示GIFを見る</a>）<br/>
-  2. 登録、ログインのボタンを生成。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/02loginbuttons.gif">展示GIFを見る</a>）<br/>
-  3. シーンで「Controller」と言うGameobjectを生成して、「ButtonController」をGameobjectにつきます。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/03ButtonController.gif">展示GIFを見る</a>）
-  </p>
-  「ButtonController」の中は、ボタンのクリックイベントを処理するためのコードです。<br/>
-  登録ボタンを処理するコードは以下：
-  <pre data-lang="c#">
-	public InputField nameInput;
-	public InputField passwordInput;
-	public void OnSignUp(){
-		//NCMBUserのインスタンス作成 
-		NCMBUser user = new NCMBUser();
-		//ユーザ名とパスワードの設定
-		user.UserName = nameInput.text;
-		user.Password = passwordInput.text;
-				
-		//会員登録を行う
-		user.SignUpAsync((NCMBException e) => { 
-			if (e != null) {
-				UnityEngine.Debug.Log ("新規登録に失敗: " + e.ErrorMessage);
-			} else {
-				UnityEngine.Debug.Log ("新規登録に成功");
-				//新しいシーンをロード
-				Application.LoadLevel("title");
-			}
-		});
-	}
-  </pre>
-  4. ユニティーに戻って、「登録」ボタンをクリックする。ボタンのOnClick関数の所に、「＋」マックをクリックして下さい。
-　<p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/redhi.jpg"/></p>
-  5. 「Controller」を下にドラッグし、OnSignUp()ファンクションを選択します。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/04SignUpClick.gif">4.と5.の展示GIFを見る</a>）
-  <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/onclick.jpg"></p>
-   6. 「Controller」をクリックして、ニックネームとパスワードの入力ボックスを「nameInput」と「passwordInput」にドラッグします。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/05DragInputField.gif">展示GIFを見る</a>）
-  <p><img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/conse.jpg"></p>
-   以上は、登録効能の基本でした。
-  </li>
-  <li><b>動作確認</b><br/>
-  	<ul>
-		<li>先ほど保存したユーザー情報はダッシュボード⇒データストアで見られます：<br/>
-			<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/login.png"/>
-		</li>
-	</ul>
-  </li>
-  <li><b>ディスカッション</b>
-  <br/>ログインとログアウトの機能を挑戦しませんか？ ┃難易度★☆☆☆☆
-  <br/><b>【アンサー】</b></br>
-  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ButtonController.cs">ログインの答え</a>
-  search key: Discussion 1 Log In<br/>
-  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ButtonController.cs">ログアウトの答え</a>
-　search key: Discussion 2 Log Out<br/>
-  <a href="#discussionanswer">答えを探す方法</a>
-  </li>
-  <li><b>ヒント</b>
-  <br/>- ニックネームとパスワード両方の輸入が必要ため、チェックする関数が必要。
-  <br/>- SignUpAsync()関数は、同期処理の関数ではありません。即ち、SignUpAsync()がコールされた後、その執行を待つではなく、コールの後のコートを執行する。
-　<br/>- ボタンにGameobjectをドラッグし、クリックイベントを処理する関数を選ぶ、と言うことはUnity専有の機能で、使い易いです。
-  </li>
-</ul>
-<span><a href="#keyquestion">リストに戻る</a></span>
-<h2 id="q2">『機能二』　落書きを描く機能</h2>
-<h5>難易度/★★★★☆</h5>
-<ul>
-  <li>描く機能の説明<br/>
-      この機能では、UnityEngineの「LineRenderer」と言うクラスを使っています。<br/>
-     「LineRender」のメソッド「SetPosition()」と「SetPositions()」を利用して、線の頂点を設置することができます。<br/>
-      ですが、一つのLineRenderは一本の線しか描けません。そして、一つのGameobjectは、一つのLineRendererだけに対応する。
-　　　<br/>ですから、毎回新しい線を画きたいとき、スクリプトで新しいGameobjectを生成する。<br/>
-      「LineRenderer」の関して、Unityの<a href="http://docs.unity3d.com/jp/current/ScriptReference/LineRenderer.html">ドキュメント</a>をご参考下さい。
-  </li>
-　<li><b>説明対象</b><br/>
-	【シーン「draw」】 <br/>
-	「Line0」Component<b>「LineRenderer」</b>、<b>「DrawLine」</b>(Script)
-  </li>
-  <li><b>主な流れ</b><br/>
-　1. 「DrawLine」と言うスクリプトを生成します。<br/>
-　2. 「DrawLine」で、「defaultRenderer」と言うLineRendererを定義し、設定します。
-  <pre>
-   defaultRenderer = gameObject.GetComponent();
-   defaultRenderer.material = new Material (shader);
-   defaultRenderer.SetVertexCount (0);
-   defaultRenderer.SetWidth (0.1f, 0.1f);
-   defaultRenderer.SetColors (Color.green, Color.green);
-   defaultRenderer.useWorldSpace = true;
-  </pre>
-　3. シーンで、「Line0」と言うGameobjectを生成します。「Add　Component」の所で、「LineRenderer」を生成します。「DrawLine」を「Line0」に付きます。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/06LineRenderer2.gif">展示GIFを見る</a>）<br/>
-　4. シーンで「DrawingPanel」と言うパネルを生成し、以下のコードに通し、スクリプトから獲得します。（この「DrawingPanel」は、スクリーンの上で絵を書くエリアです。）
-  <pre>
-  panel = GameObject.Find ("DrawingPanel");
-　</pre>
-　5. 以下のコードを「DrawLine.cs」のUpdate()函数に追加します。
-  <pre>
-	if (Input.GetMouseButtonDown (0)) {
-            //to check if this line renderer is used. If it is, create a new line renderer(on a new Gameobject)
-            //(so that more than 1 lines can be rendered)
-            if(!used){
-                used = true;
-                isMousePressed = true;
-                defaultRenderer.SetVertexCount (0);
-                pointList.RemoveRange (0, pointList.Count);
-            }else if(!newCreated){
-                //to draw more than 1 lines, we have to create a new gameObejct
-                GameObject newRenderer = GameObject.Instantiate (rendererPrefab);
-                newCreated = true;
-                newRenderer.GetComponent ().init();
-            }
-        }
-        if (Input.GetMouseButtonUp (0)) {
-            isMousePressed = false;}
-        if (isMousePressed && IfInDrawingCanvas()) {
-		mousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		mousePos.z = 0;
-		if (!pointList.Contains (mousePos)) {
-			pointList.Add (mousePos);
-			defaultRenderer.SetVertexCount (pointList.Count);
-			defaultRenderer.SetPosition (pointList.Count - 1, (Vector3)pointList [pointList.Count - 1]);
-		}
-	}
-  </pre>
-  以上のスクリプトが使う変数の定義：
-  <pre>
-	private bool isMousePressed = false;
-	public List<Vector3> pointList;
-	private Vector3 mousePos;
-	private LineRenderer defaultRenderer;
-	private bool used = false;
-	private bool newCreated = false;
-	//Prefeb of Gameobject "Line0"
-	public GameObject rendererPrefab;
-	private GameObject panel;
-  </pre>
-  以上のスクリプトが使う関数：
-　<pre>
-	//マウスは「DrawingPanel」のエリアにあるがどうか確認する
-	bool IfInDrawingCanvas(){
-		if (Screen.height - Input.mousePosition.y < (-panel.GetComponent<RectTransform> ().offsetMax.y) ||
-		   Screen.height - Input.mousePosition.y > (Screen.height - panel.GetComponent<RectTransform> ().offsetMin.y)) {
-			return false;
-		}
-		if (Input.mousePosition.x < panel.GetComponent<RectTransform>().offsetMin.x || 
-			Input.mousePosition.x > (Screen.width + panel.GetComponent<RectTransform>().offsetMax.x)){ 
-			return false;
-		}
-		return true;
-	}
-	//「DrawLine」を初期化する
-	public void init(){
-		used = true;
-		isMousePressed = true;
-		pointList.RemoveRange (0, pointList.Count);
-	}
-  </pre>
-  </li>
-  <li><b>ヒント</b><br/>
-  複数の線を画く方法を紹介しましだが、もし、一本の線だけ描きたい場合、<a href="http://qiita.com/kwst/items/ad61e72562a8bcd9a9f7">こちら</a>をご参考下さい。
- </li>
-  <li><b>ディスカッション</b><br/>
-  ブラッシュの色とサイズを変えてみますか？┃難易度★★★☆☆
-  <br/><b>【アンサー】</b>
-　</br><a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/DrawLine.cs">答え</a>　
-search key: Discussion 3 Set linerenderer's color and size
-  <br/><a href="#discussionanswer">答えを探す方法</a>
-</li>
-</ul>
-<span><a href="#keyquestion">リストに戻る</a></span>
-
-<h2 id="q3">『機能三』　画像の保存と取得（ファイルストア）</h2>
-<h5>難易度/★★☆☆☆</h5>
-<ul>
-  <li><b>mbのファイルストア機能について</b><br/>
-  	<p>ニフティクラウドmobile backendが提供している、画像やテキスト、音楽などさまざまな種類のファイルを保存することができるストレージ機能です。
-  	詳しくのは<a href="http://mb.cloud.nifty.com/doc/current/filestore/basic_usage_unity.html">ドキュメント</a>を参考下さい。
-  	</p>
-  </li>
-  <li><b>説明対象</b><br/>
-  【シーン「draw」】<br/>
-  「Controller」Component<b>「SaveImage」</b>(Script)
-  </li>
-  <li><b>主な流れ</b>
-  <h5>Step 1 スクリーンショットに通して、画像をゲットする</h5>
-  <p>このステップは、「SaveImage」スクリプトの「saveImage()」関数で行う。スクリーンショットをする範囲は、インプットされたGameobjectのエリアだけです。</p>
-  <pre>
-  	public void saveImage (GameObject go) {
-		float width = Screen.width + go.GetComponent<RectTransform>().offsetMax.x - go.GetComponent<RectTransform>().offsetMin.x;
-		float height = Screen.height - go.GetComponent<RectTransform> ().offsetMin.y + go.GetComponent<RectTransform> ().offsetMax.y;
-	
-		renderTexture = new RenderTexture (Screen.width, Screen.height, 0);
-		camera.targetTexture = renderTexture;
-		camera.Render ();
-
-		RenderTexture.active = renderTexture;
-		Texture2D virtualPhoto =
-			new Texture2D((int)width, (int)height, TextureFormat.RGB24, false);
-		// false, meaning no need for mipmaps
-		virtualPhoto.ReadPixels( new Rect(go.GetComponent<RectTransform>().offsetMin.x, 
-			go.GetComponent<RectTransform>().offsetMin.y, 
-			width, height), 0, 0);
-
-		RenderTexture.active = null; //can help avoid errors 
-		camera.targetTexture = null;
-
-		//pngに転換する
-		byte[] bytes;
-		bytes = virtualPhoto.EncodeToPNG();
-		saveToCloud (bytes,getName());
-	}
-  </pre>
-  <h5>Step 2 画像をクラウドに保存する</h5>
-  <p>ここで、mbのSDKを使います。簡単なコードで、クラウドに保存できます。以下のコードで使われる関数「saveImageData()」は、次の問題で話します。</p>
-  <pre>
-  	void saveToCloud(byte[] bytes, string name){
-		NCMBFile file = new NCMBFile (name, bytes);
-		file.SaveAsync ((NCMBException error) => {
-			if (error != null) {
-				Debug.Log("upload error");
-                showError(error);
-				// 失敗
-			} else {
-				saveImageData(name);
-			}
-		});
-	}
-  </pre>
-  <h5>Step 3 Unityの設定</h5>
-  <p>「SaveImage.cs」を「Drawing」シーンの中の「Controller」に付き、MainCameraを「Camera」の所にドラッグします。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/07SaveImage.gif">展示GIFを見る</a>）</p>
-  <img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/saimg.JPG"/>
-  </li>
-  <li><b>動作確認</b><br/>
-  	先ほどクラウドに保存した落書きはダッシュボードのファイルストアに見られます：
-  	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/filestore.png"/>
-  </li>
-  <li><b>ディスカッション</b>
-  <br/>クラウドから画像を取得することも同じく簡単です！ ┃難易度★☆☆☆☆
-  <br/>クラウドから取得した画像のタイプはbyte[]ですが、どうやってUnityに使えますか？ ┃難易度★★☆☆☆
-  <br/><b>【アンサー】</b></br>
-  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ThemeImageController.cs">画像取得の答え</a>
-  search key: Discussion 4 Load from cloud<br/>
-  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/ThemeImageController.cs">byte[]の答え</a>
-　search key: Discussion 5 Deal with byte[] data<br/>
-  <a href="#discussionanswer">答えを探す方法</a>
-  </li>
-  <li><b>ヒント</b>
-  <br/>- ログインと同じ、ファイルの保存と取得も同調ではないです。
-  <br/>- クラウドに保存したファイルは、mbの<a href="https://console.mb.cloud.nifty.com">管理画面</a>で見られます。
-  「アプリ設定」⇒「データ-ファイルストア」の「HTTPSでの取得」を「有効」にしたら、ファイルの公開URLが取得できます。とても便利な機能です。
-  </li>
-</ul>
-<span><a href="#keyquestion">リストに戻る</a></span>
 
 
-<h2 id="q4">『機能四』　画像に関するデータの保存と取得（データストア）</h2>
-<h5>難易度/★☆☆☆☆</h5>
-<ul>
-  <li><b>mbのデータストア機能について</b><br/>
-  	<p>ニフティクラウドが提供している、アプリで利用されるデータを保存・共有することができるデータベース機能です。
-  	詳しくのは<a href="http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html">ドキュメント</a>を参考下さい。
-  	</p>
-  </li>
-   <li><b>説明対象</b><br/>
-  【シーン「draw」】データを保存する場合<br/>
-  「Controller」Component<b>「SaveImage」</b>(Script)
-  <br/>【シーン「doodles」】データを取得する場合<br/>
-  「Controller」Component<b>「ThemeImageController」</b>(Script)
-  </li>
-  <li><b>主な流れ</b>
-  <p>
-  	画像をクラウドに保存するだけではなく、画像に関するデーター（画像の名前、描いた人のニックネームなど）も保存する必要もあります。それが、画像を検索する時の証拠になりますから。
-  </p>
-  <h5> データを保存する場合
-  <p>
-  	「SaveImage」スクリプトの中で、mbのSDKに通して、簡単にデータを保存できます。
-  </p>
-  	<pre>
-  	void saveImageData(string filename){
-		NCMBObject obj = new NCMBObject ("DoodleRecord");
-		obj.Add ("username", Configuration.username);
-		obj.Add ("filename", filename);
-		obj.Add ("date", DateTime.Now.Date);
-		obj.Add ("theme", Configuration.theme);
-		obj.Add ("likes", 0);
-		
-		obj.Save ((NCMBException e) => {      
-			if (e != null) {
-				Debug.Log("save data error");
-			} else {
-				//成功時の処理
-				if(Configuration.status == Status.newTheme){
-					Application.LoadLevel("themes");
-				}else if(Configuration.status == Status.newDoodle){
-					Application.LoadLevel("doodles");
-				}
-			}                   
-		});
-	}
-  	</pre>
-  <h5>データを取得する場合</h5>
-  <p>
-  	データーを取得する時、先ずは検索の条件を決まります。sqlと同じ、mbのSDKは、「NCMBQuery.WhereEqualTo(KEY,VALUE)」、「limit」、「skip」などの関数に通して、検索条件を指定できます。詳しくは<a href="http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html#基本的な検索の利用">ドキュメント</a>をご参考ください。
-  	<br/>「Doodle」では、落書きを展示する前に、名前に対応する画像のURLを見つけるため、画像のレコードを取得することが必要です。以下のコードは、シーン「doodles」のGameobject「Controller」のComponentの一つ「ThemeImageController」の中にあります。
-  </p>
-  <pre>
-  	void loadImages(){
-		//QueryTestを検索するクラスを作成
-		NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("DoodleRecord");
-
-		query.WhereEqualTo ("date", DateTime.Now.Date);
-		query.WhereEqualTo ("type", pictureType);
-		if (pictureType == "doodle") {
-			query.WhereEqualTo ("theme", Configuration.theme);
-		}
-		query.OrderByDescending ("createDate");
-		//取得件数の指定
-		query.Limit = maxCountInPage;
-		//取得開始位置の指定
-		query.Skip = page * maxCountInPage;
-		query.FindAsync ((List<NCMBObject> objList ,NCMBException e) => {
-			if (e != null) {
-				//検索失敗時の処理
-			} else {
-				//Scoreが7のオブジェクトを出力
-				foreach (NCMBObject obj in objList) {
-					//ファイルネームに通し、画像をクラウドからダウンロードする
-					NextImageIndex();
-					imageData.Add(obj);
-					InitLike(nowImageIndex);
-					loadOneImageTo(obj["filename"].ToString(), nowImageIndex);
-				}
-			}
-		});
-	}
-  </pre>
-  </li>
-  <li><b>動作確認</b><br/>
-  	先ほど保存した落書きに関するデータはダッシュボードのデータストアに見られます：
-  	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/FE7PlfNohVQTwttA/publicFiles/doodlerc.png"/>
-  </li>
-  <li><b>ヒント</b>
-  <br/>- データを保存する場合、NCMBObject.save()とNCMBObject.saveAsync()の二つの関数を使えられます。save()は同時処理で、saveAsync()は非同時処理ですが、どちらを使うのは状況次第です。
-  </li>
-</ul>
-<span><a href="#keyquestion">リストに戻る</a></span>
-
-
-<h2 id="q5">『機能五』　人気ランキング機能（データストア）</h2>
-<h5>難易度/★★★☆☆</h5>
-<ul>
-  <li><b>mbのデータストア機能について</b><br/>
-  	<p><a href="#q4">問題四</a>の「mbのデータストア機能について」部分をご覧ください。
-  	</p>
-  </li>
-  <li><b>ランキング機能の説明</b><br/>
-  	<p>
-  	「Doodle」のランキング機能は、Twitterの「いいね」と似て、作品を好きな人の数で決まります。落書き作品の右上のハートマークをクリックすると、ハート全体が赤くなって、「この作品に1票を投じました」を表示します。<br/>
-  	<img height="200px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/likee.png"/>
-  	<br/>もし、赤くなったハートをもう一度クリックすると、以上のアクションは消します。
-  	<br/>
-  	一番人気な落書きは、ゲームの主要画面の左に表示されます。クリックすると、人気一位から四位までの落書き作品が見られます。
-  	<br/>
-  	<img height="200px" src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/best0.png"/><br/>
-  	</p>
-   </li>
-   <li><b>説明対象</b><br/>
-    【シーン「doodles」】<br/>
-    「Controller」Component<b>「ThemeImageController」</b><br/>
-   </li>
-  <li><b>主な流れ</b>
-  	<h5>Step 1 ハートマークのSpriteの定義と取得</h5>
-  	Gameobjectの「Controller」に付ける「ThemeImageController」のスクリプトの中で、以下の変数を定義する。
-	<pre>
-	//空きハートのSprite
-	public Sprite likeSprite;
-	//全体赤いハートのSprite
-	public Sprite likeClickedSprite;
-	</pre>
-  	<p>
-  	この二つのハートマークを定義し、UnityからSpriteファイルを取得する。（<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/08LikeSprite.gif">展示GIFを見る</a>）<br/>
-  	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/likeU.JPG"/>
-  	</p>
-  	<h5>Step 2 ハートマークの切り替え、データの保存</h5>
-  	<p>ハートマークをクリックする時、更新すべきデータが二箇所あります。<br/>
-  	1. 「データストア」⇒　クラス「DoodleRecord」 ⇒　「likes」<br/>
-  	   &nbsp;&nbsp;&nbsp;&nbsp;ここでは、落書きのデータが保存されています。「likes」と言う列は、この落書きに気に入れた人数です。
-  	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/like-.JPG"/>
-  	2.  「データストア」⇒ 　クラス「LikeRecord」⇒　新規記録<br/>
-  	&nbsp;&nbsp;&nbsp;&nbsp;ここでは、投票記録が保存されてしています。<br/>
-	<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/lirc.JPG"/>
-  	<br><br/>
-	ハートマークをクリックするアクションは、「ThemeImageController」スクリプトのLightUpLike(INDEX)関数で処理します。インプットされた「index」は、
-	シーンの中のハートマークの番号です。
-	<br/><br/>関数LightUpLike():
-	</p>
-  	<pre>
-  	public void LightUpLike(int index){
-  		//まだクリックしてない場合
-		if (this.likes [index].sprite == likeSprite) {
-			//ハートマークを切り替え
-			this.likes [index].sprite = likeClickedSprite;
-			//好きな人数を取得
-			int likeCount = int.Parse(imageData[index]["likes"].ToString());
-			//人数を更新し
-  			likeCount++;
-  			imageData[index]["likes"] = likeCount;
-			//「誰がどれを好き」の記録を保存する
-			SaveLikeData (NCMBUser.CurrentUser.ObjectId,  imageData[index]["filename"].ToString());
-		//クリックした場合	
-		} else if (this.likes [index].sprite == likeClickedSprite) {
-			this.likes[index].sprite = likeSprite;
-			int likeCount = int.Parse(imageData[index]["likes"].ToString());
-			likeCount--;
-			imageData[index]["likes"] = likeCount;
-			//「誰がどれを好き」の記録を消す
-			DeleteLikeData (NCMBUser.CurrentUser.ObjectId, imageData[index]["filename"].ToString());
-		}
-		//好きな人数を更新する
-		imageData[index].SaveAsync ((NCMBException e2) => {      
-			if (e2 != null) {
-			//エラー処理
-			} else {
-			//成功時の処理
-			}                   
-		});
-	}
-	</pre>
-	<p>「LikeRecord」の新規生成：</p>
-	<pre>
-	void SaveLikeData(string user, string doodle){
-		NCMBObject obj = new NCMBObject ("LikeRecord");
-		obj.Add ("doodle", doodle);
-		obj.Add ("user", user);
-		obj.Save ((NCMBException e) => {      
-			if (e != null) {
-				Debug.Log("save like data error");
-			} else {
-				//成功時の処理
-			}                   
-		});
-	}
-	</pre>
-	<p>存在している「LikeRecord」を消す：</p>
-	<pre>
-	void DeleteLikeData(string user, string doodle){
-		//LikeRecordを検索するクラスを作成
-		NCMBQuery<NCMBObject> query = new NCMBQuery<NCMBObject> ("LikeRecord");
-		query.WhereEqualTo ("user", user);
-		query.WhereEqualTo ("doodle", doodle);
-		query.FindAsync ((List<NCMBObject> objList ,NCMBException e) => {
-			if (e != null) {
-				//検索失敗時の処理
-			} else {
-				foreach (NCMBObject obj in objList) {
-					Debug.Log ("delete objectId:" + obj.ObjectId);
-					obj.DeleteAsync ((NCMBException deleteError) => {
-						if (deleteError != null) {
-							//エラー処理
-						} else {
-							//成功時の処理
-						}
-					});
-				}
-			}
-		});
-	}
-  	</pre>
-  </li>
-  <li><b>ディスカッション</b>
-  <br/>「DoodleRecord」の「likes」を利用したら、ランキングを作られるですが、それを試してみますか？難易度★★☆☆☆
-  <br/><b>【アンサー】</b></br>
-  <a href="https://github.com/ellentby/Doodle-DrawTogether/blob/tutorial/Assets/script/BestImageReader.cs">答え</a>
-  search key: Discussion 6 Like Ranking<br/>
-  <a href="#discussionanswer">答えを探す方法</a>
-  </li>
-</ul>
-<span><a href="#keyquestion">リストに戻る</a></span>
-
-
-<h2 id="discussionanswer">ディスカッションの答えを探す方法</h2>
-<p>1. 提供されたURLをクリックして下さい。<br/>
-2. Ctrl+Fを押し下さい（MACの場合、Command＋F）。<br/>
-3. 出できた検査ボクスに提供されたsearch keyを輸入して「Enter」を押して下さい。
-<img src="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/searchbox.JPG"/><br/>
-4. 検索結果とその下のコードはあなたが探したい答えですよ！(つ´ω`)つ<br/>
-<a href="https://mb.api.cloud.nifty.com/2013-09-01/applications/JH0HWGCunFwimk6Q/publicFiles/SearchAnswer2.gif">展示GIFを見る</a>
-</p>
-<h2 id="communication">お問い合わせ</h2>
-<p>このゲームについての質問は、「issures」に投稿ください。</p>
-<p>mbに質問、意見など、<a href="http://mb.cloud.nifty.com/faq.htm">こちら</a>に参考して下さい。
-<br/>或いは、<a href="https://github.com/NIFTYCloud-mbaas/UserCommunity">こちら</a>に投稿してください。
-</p>
-<h2 id="reference">参考</h2>
-<ul>
-	<li><a href="http://mb.cloud.nifty.com/doc/current/">mBaas ドキュメント</a></li>
-</ul>
-<a href="#contents">「ドキュメント概要」に戻る</a>
+## 参考
+* ニフティクラウドmobile backend の[ドキュメント（会員管理）](http://mb.cloud.nifty.com/doc/current/user/basic_usage_unity.html)
+* ニフティクラウドmobile backend の[ドキュメント（ファイルストア）](http://mb.cloud.nifty.com/doc/current/filestore/basic_usage_unity.html)
+* ニフティクラウドmobile backend の[ドキュメント（データストア）](http://mb.cloud.nifty.com/doc/current/datastore/basic_usage_unity.html)
+* このアプリの[機能解説ドキュメント](https://github.com/ellentby/Doodle-DrawTogether/blob/master/%E6%A9%9F%E8%83%BD%E8%A7%A3%E8%AA%AC.md)
