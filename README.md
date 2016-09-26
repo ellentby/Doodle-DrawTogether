@@ -50,7 +50,7 @@
 ![画像07](https://github.com/hounenhounen/UnityLoginApp/blob/master/readme-img/ApiKey.png)
 
 
-* シーンを保存して下さい。
+* 貼り付けたらシーンを保存して下さい。
 
 ### 5. アプリ再生
 * Unity画面で上部真ん中の実行ボタン（さんかくの再生マーク）をクリックしして、ゲームを体験しましょう！
@@ -109,7 +109,7 @@
 ![画像14](readme-img/checkdata.png)
 
 ##機能解説
-ユーザー登録と画像データの保存、絵を描く、ランキング機能などの具体的な解説は<a href="https://github.com/ellentby/Doodle-DrawTogether/blob/master/%E6%A9%9F%E8%83%BD%E8%A7%A3%E8%AA%AC.md">機能解説ドキュメント</a>の方をご参照下さい：
+ユーザー登録と画像データの保存、絵を描く、ランキング機能などの具体的な解説は<a href="https://github.com/ellentby/Doodle-DrawTogether/blob/master/%E6%A9%9F%E8%83%BD%E8%A7%A3%E8%AA%AC.md">機能解説ドキュメント</a>をご参照下さい：
 
 <ul>
   <li><a href="機能解説.md#q1">『機能一』ユーザー登録とログイン（会員管理）</a>
