@@ -11,7 +11,7 @@
 
 注1：詳しくは[こちら](http://mb.cloud.nifty.com/price.htm)をご覧ください
 
-![画像2](https://github.com/natsumo/SwiftLoginApp/blob/master/readme-img/002.png)
+![画像2](/readme-img/002.png)
 
 ## 動作環境
 * windows7以上、或いはOS X
@@ -31,7 +31,7 @@
 * アプリ作成されると下図のような画面になります
 * この２種類のAPIキー（アプリケーションキーとクライアントキー）は次のステップで使用します。 
 
-![画像4](https://github.com/natsumo/SwiftLoginApp/blob/master/readme-img/004.png)
+![画像4](/readme-img/004.png)
 
 ### 2. GitHubからサンプルプロジェクトの<a href="https://github.com/ellentby/Doodle-DrawTogether/archive/master.zip">ダウンロード</a>
 
@@ -47,7 +47,7 @@
 * loginシーンの`NCMBSettings`を編集します
 * 先程[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のダッシュボード上で確認したAPIキーを貼り付けます
 
-![画像07](https://github.com/hounenhounen/UnityLoginApp/blob/master/readme-img/ApiKey.png)
+![画像07](/readme-img/ApiKey.png)
 
 
 * 貼り付けたらシーンを保存して下さい。
