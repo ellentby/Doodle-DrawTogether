@@ -26,7 +26,6 @@ public class DrawLine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print ();
 		if (Input.GetMouseButtonDown (0) && IfInDrawingCanvas()) {
 			//to check if this line renderer is used. If it is, create a new line renderer(on a new Gameobject)
 			//(so that more than 1 lines can be rendered)
@@ -110,15 +109,6 @@ public class DrawLine : MonoBehaviour {
 		setLineColor();
 		setLineWidth ();
 		defaultRenderer.useWorldSpace = true;
-	}
-	public void print(){
-		if (Input.GetKeyDown (KeyCode.A)) {
-			Debug.Log ("name "+ gameObject.name);
-			Debug.Log ("is Mouse Pressed"+isMousePressed);
-			Debug.Log ("used "+used);
-			Debug.Log ("created "+ newCreated);
-			Debug.Log ("ifindrawing "+this.IfInDrawingCanvas());
-		}
 	}
 	public void ReviveRenderer(){
 		newCreated = false;
