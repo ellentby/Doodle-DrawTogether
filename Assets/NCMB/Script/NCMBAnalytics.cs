@@ -1,5 +1,5 @@
 ﻿/*******
- Copyright 2017 FUJITSU CLOUD TECHNOLOGIES LIMITED All Rights Reserved.
+ Copyright 2017-2018 FUJITSU CLOUD TECHNOLOGIES LIMITED All Rights Reserved.
  
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -24,13 +24,16 @@ using NCMB.Internal;
 using System.Linq;
 using UnityEngine;
 
+using System.Runtime.CompilerServices;
+
+[assembly:InternalsVisibleTo ("Assembly-CSharp-Editor")]
 namespace  NCMB
 {
 	/// <summary>
 	/// 開封通知操作を扱います。
 	/// </summary>
 	[NCMBClassName ("analytics")]
-	internal static class NCMBAnalytics
+	internal class NCMBAnalytics
 	{
 		internal static void TrackAppOpened (string _pushId)	//(Android/iOS)-NCMBManager.onAnalyticsReceived-this.NCMBAnalytics
 		{
@@ -38,12 +41,12 @@ namespace  NCMB
 			if (_pushId != null && NCMBManager._token != null && NCMBSettings.UseAnalytics) {
 
 				string deviceType = "";
-				if (SystemInfo.operatingSystem.IndexOf ("Android") != -1) {
-					deviceType = "android";
-				} else if (SystemInfo.operatingSystem.IndexOf ("iPhone") != -1) {
-					deviceType = "ios";
-				}
-					
+				#if UNITY_ANDROID
+				deviceType = "android";
+				#elif UNITY_IOS
+				deviceType = "ios";
+				#endif
+
 				//RESTリクエストデータ生成
 				Dictionary<string,object> requestData = new Dictionary<string,object> { 
 					{ "pushId", _pushId },
@@ -52,10 +55,10 @@ namespace  NCMB
 				};
 
 				var json = Json.Serialize (requestData);
-				string url = CommonConstant.DOMAIN_URL + "/" + CommonConstant.API_VERSION + "/push/" + _pushId + "/openNumber";
+				string url = NCMBAnalytics._getBaseUrl (_pushId);
 				ConnectType type = ConnectType.POST;
 				string content = json.ToString ();
-				NCMBDebug.Log ("content:" + content);
+
 				//ログを確認（通信前）
 				NCMBDebug.Log ("【url】:" + url + Environment.NewLine + "【type】:" + type + Environment.NewLine + "【content】:" + content);
 				// 通信処理
@@ -70,14 +73,22 @@ namespace  NCMB
 				});    
 
 				#if UNITY_IOS
-					#if UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_5 || UNITY_4_6 || UNITY_4_7
-					NotificationServices.ClearRemoteNotifications ();
-					#else
 					UnityEngine.iOS.NotificationServices.ClearRemoteNotifications ();
-					#endif
 				#endif
 
 			}
+		}
+
+		/// <summary>
+		/// コンストラクター
+		/// </summary>
+		internal NCMBAnalytics ()
+		{
+		}
+		//オーバーライド
+		internal static string _getBaseUrl (string _pushId)
+		{
+			return NCMBSettings.DomainURL + "/" + NCMBSettings.APIVersion + "/push/" + _pushId + "/openNumber";
 		}
 	}
 }
